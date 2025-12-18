@@ -54,6 +54,18 @@
     .back-link:hover {
       text-decoration: underline;
     }
+    
+  ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+  }
+
+  ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #e5e7eb;
+  }
   </style>
 </head>
 
@@ -64,10 +76,10 @@
     <h1>Wildfire Prediction in Brazil's Central-West Region</h1>
 
     <p>
-      This project explores the relationship between climatic, spatial and
-      socioeconomic factors to predict wildfire occurrences in Brazil’s
-      Central-West region. The analysis combines geospatial visualization,
-      feature engineering and machine learning models.
+      This project investigates the relationship between climatic, spatial, and
+      socioeconomic factors to predict wildfire occurrences in Brazil’s Central-West
+      region. The analysis integrates geospatial visualization, feature engineering,
+      and machine learning models.
     </p>
 
     <div class="map-container">
@@ -93,16 +105,27 @@
     <div class="map-container">
       <iframe src="../assets/maps/crossed_data.html"></iframe>
     </div>
-    <p style="margin-top: 24px;">
-      The crossed data map integrates wildfire occurrences with socioeconomic
-      indicators, illustrating the correlation between fire activity and
-      economic factors. This visualization aids in understanding how
-      socioeconomic conditions may influence wildfire risks.
-    
-      It's possible to observate that many of the municipalities with high wildfire
-      occurrences also exhibit significant agricultural economic activity. In particular,
-      the Central-West region of Brazil shows a notable overlap between areas of high Fire Radiative
-      Power (FRP) and municipalities with substantial agricultural Gross Value Added (GVA).
+    <p>
+      The crossed data map combines wildfire occurrences (Fire Radiative Power – FRP)
+      with agricultural economic activity (Gross Value Added – GVA) to explore
+      spatial correlations between fire events and economic factors.
+    </p>
+
+    <ul>
+      <li><strong>Blue pins:</strong> Central-West region</li>
+      <li><strong>Pink pins:</strong> South region</li>
+      <li><strong>Orange pins:</strong> Northeast region</li>
+      <li><strong>Green pins:</strong> North region</li>
+      <li><strong>Red pins:</strong> Southeast region</li>
+    </ul>
+
+    <p>
+      The visualization reveals that several municipalities with high wildfire
+      occurrences also exhibit significant agricultural economic activity. Notably,
+      Brazil’s Central-West region shows a strong spatial overlap between high Fire
+      Radiative Power (FRP) and elevated agricultural GVA, reinforcing the hypothesis
+      that intensive agricultural production is closely associated with increased
+      wildfire incidence.
     </p>
   </div>
 </body>
