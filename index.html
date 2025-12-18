@@ -111,6 +111,54 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+    /* Projects section */
+.projects {
+  margin-top: 80px;
+}
+
+.project-card {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #020617;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.project-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.project-button:hover {
+  background: #38bdf8;
+  color: #020617;
+}
+
   </style>
 </head>
 <body>
@@ -129,17 +177,45 @@
           alt="Marcos Rampaso"
           class="profile-pic"
         />
-
       <div class="location">
         São Paulo, Brazil
       </div>
         <p>
-          I am a data professional with a background in Computer Science, experienced
+          I am a data professional with a bachelors degree in Computer Science, experienced
           in data analysis, machine learning and building predictive models. I enjoy
           transforming raw data into actionable insights and developing solutions
           that support real-world decision-making.
         </p>
       </div>
+        <!-- Projects --><!-- Projects -->
+        <div class="projects">
+        <h3>Projects</h3>
+
+        <div class="project-card">
+            <img
+            src="images/wildfire_project.jpg"
+            alt="Wildfire Prediction Project"
+            class="project-image"
+            />
+
+            <div class="project-title">
+            Wildfire Prediction in Brazil's Central-West Region using SVM
+            </div>
+
+            <div class="project-buttons">
+            <a class="project-button" href="projects/wildfire.html">
+                Data Analysis
+            </a>
+            <a
+                class="project-button"
+                href="https://github.com/marcosrampaso/spatial-wildfire-prediction"
+                target="_blank"
+            >
+                Source Code
+            </a>
+            </div>
+        </div>
+        </div>
     </div>
   </div>
 
