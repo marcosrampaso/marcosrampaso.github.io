@@ -149,11 +149,62 @@
     .nav-links a:hover {
       color: #38bdf8;
     }
+
+    .toc {
+      position: fixed;
+      top: 120px;
+      left: 24px;
+      width: 220px;
+      font-size: 0.85rem;
+    }
+
+    .toc h4 {
+      margin-bottom: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    .toc a {
+      display: block;
+      color: #64748b;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #38bdf8;
+    }
+
+    /* Ajuste layout principal */
+    .container {
+      margin-left: 260px;
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .toc {
+        display: none;
+      }
+
+      .container {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
+    <nav class="toc">
+      <h4>Contents</h4>
+      <a href="#summary">Project Summary</a>
+      <a href="#eda">Exploratory Data Analysis</a>
+      <a href="#central-west">Central-West Analysis</a>
+      <a href="#climate">Climate Data Processing</a>
+    </nav>
     <div class="header-container">
       <div class="header-name">Marcos Rampaso</div>
 
@@ -163,39 +214,59 @@
       </nav>
     </div>
   </header>
-  <div class="container">
-    <a href="../index.html" class="back-link">← Back to home</a>
+  <div class="container"><a href="../index.html" class="back-link">← Back to home</a>
+    <h1 id="top">Wildfire Prediction in Brazil's Central-West Region</h1>
 
-    <h1>Wildfire Prediction in Brazil's Central-West Region</h1>
+    <h2 id="summary">Project Summary</h2>
+
     <p>
-      This project presents an end-to-end machine learning pipeline developed to predict
-      wildfire occurrences in Brazil, with a primary focus on the Central-West region.
-      The workflow integrates data acquisition, exploratory data analysis (EDA), climate
-      data processing, data preprocessing, and predictive modeling to analyze the
-      relationship between climatic conditions, socioeconomic activity, and wildfire
-      dynamics.
+      This project develops a machine learning–based approach to predict wildfire
+      occurrences in Brazil’s Central-West region by integrating climatic,
+      spatial, and socioeconomic data. The study combines geospatial analysis
+      with supervised learning techniques to identify key drivers of wildfire risk.
+    </p>
+
+    <ul>
+      <li><strong>Problem:</strong> Rising wildfire occurrences in regions with intense agricultural activity.</li>
+      <li><strong>Data:</strong> Fire Radiative Power (FRP), climate variables, and municipal socioeconomic indicators.
+      </li>
+      <li><strong>Approach:</strong> End-to-end pipeline including EDA, feature engineering, and SVM modeling.</li>
+      <li><strong>Key Insight:</strong> Prolonged dry periods are strongly associated with increased wildfire activity.
+      </li>
+      <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
+    </ul>
+
+    <p style="font-size: 0.95rem; color: #94a3b8;">
+      This project was developed as part of my undergraduate thesis in Computer Science.
+    </p>
+
+    <p>
+      The workflow integrates data acquisition, exploratory data analysis (EDA),
+      climate data processing, data preprocessing, and predictive modeling to
+      analyze the relationship between climatic conditions, socioeconomic activity,
+      and wildfire dynamics.
     </p>
 
     <p>
       The analytical pipeline below provides a high-level overview of the project
-      architecture, demonstrating how heterogeneous data sources are transformed into
-      a unified dataset and subsequently used for model training and evaluation.
+      architecture, illustrating how heterogeneous data sources are transformed
+      into a unified dataset and used for model training and evaluation.
     </p>
 
     <div style="text-align: center; margin-top: 32px;">
       <img src="../assets/images/wildfire_pipeline.png" alt="End-to-end wildfire prediction pipeline" style="
-      width: 100%;
-      max-width: 850px;
-      border-radius: 14px;
-      border: 1px solid #1e293b;
-    " />
+            width: 100%;
+            max-width: 850px;
+            border-radius: 14px;
+            border: 1px solid #1e293b;
+          " />
       <p style="margin-top: 12px; font-size: 0.95rem; color: #94a3b8;">
         Figure 1 – End-to-end pipeline illustrating data acquisition, exploratory analysis,
         climate data processing, preprocessing, and machine learning modeling stages.
       </p>
     </div>
 
-    <h2>Exploratory Data Analysis (EDA)</h2>
+    <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
     <div class="map-container">
       <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
     </div>
@@ -243,7 +314,7 @@
       Central-West region was selected for further analysis and predictive modeling.
     </p>
 
-    <h2>Analysis of the Central-West Region</h2>
+    <h2 id="central-west-analysis">Analysis of the Central-West Region</h2>
 
     <p>
       Focusing on Brazil’s Central-West region, this stage of the project investigates
