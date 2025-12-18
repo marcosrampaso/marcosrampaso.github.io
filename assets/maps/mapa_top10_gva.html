@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_27e2509a48040ffd443177cb8667d95f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_27e2509a48040ffd443177cb8667d95f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_27e2509a48040ffd443177cb8667d95f = L.map(
+                "map_27e2509a48040ffd443177cb8667d95f",
+                {
+                    center: [-14.235, -51.9253],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8d136f56d5a025ff30bc781c0b00136a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8d136f56d5a025ff30bc781c0b00136a.addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+            var circle_marker_bfe18dfbf965ba0310d3a7b982a0bd74 = L.circleMarker(
+                [-13.547958, -58.8146235],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 26.0, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_2c0261699294e98af654aa4239c93bd3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c761bb03b27bac1f0b1e3754b1ec9237 = $(`<div id="html_c761bb03b27bac1f0b1e3754b1ec9237" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> sapezal<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 1,402,282.11                 </div>`)[0];
+                popup_2c0261699294e98af654aa4239c93bd3.setContent(html_c761bb03b27bac1f0b1e3754b1ec9237);
+            
+        
+
+        circle_marker_bfe18dfbf965ba0310d3a7b982a0bd74.bindPopup(popup_2c0261699294e98af654aa4239c93bd3)
+        ;
+
+        
+    
+    
+            var circle_marker_39fa2d0c8a0a0de7d60fd1961cca7fbf = L.circleMarker(
+                [-12.5444887, -55.7233972],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.548373519327082, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_8dd2454da9dfdea79af0b6a0ab22c80a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a11095b0c4c1508480420383f1f44ee5 = $(`<div id="html_a11095b0c4c1508480420383f1f44ee5" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> sorriso<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 1,361,551.12                 </div>`)[0];
+                popup_8dd2454da9dfdea79af0b6a0ab22c80a.setContent(html_a11095b0c4c1508480420383f1f44ee5);
+            
+        
+
+        circle_marker_39fa2d0c8a0a0de7d60fd1961cca7fbf.bindPopup(popup_8dd2454da9dfdea79af0b6a0ab22c80a)
+        ;
+
+        
+    
+    
+            var circle_marker_be1a5aa5f15ae71f37bdbe59466a34c9 = L.circleMarker(
+                [-17.7921255, -50.9191219],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.15523636309723, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_6535f0c43569f25cc2935d79f19915c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a565fa170732264b00f770b789c313aa = $(`<div id="html_a565fa170732264b00f770b789c313aa" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> rio verde<br>                 <b>Estado:</b> GOIÁS<br>                 <b>GVA Agropecuário:</b> R$ 1,294,402.41                 </div>`)[0];
+                popup_6535f0c43569f25cc2935d79f19915c4.setContent(html_a565fa170732264b00f770b789c313aa);
+            
+        
+
+        circle_marker_be1a5aa5f15ae71f37bdbe59466a34c9.bindPopup(popup_6535f0c43569f25cc2935d79f19915c4)
+        ;
+
+        
+    
+    
+            var circle_marker_3c035d329881ed78b0dd13537bd87e49 = L.circleMarker(
+                [-13.658735, -57.890723],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.04950271685981, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_271d92c8c7a5e2a3cb8c17e2ec10d94d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f9545d829ddc8511e10e0e18aa52a68 = $(`<div id="html_5f9545d829ddc8511e10e0e18aa52a68" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> campo novo do parecis<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 1,123,082.46                 </div>`)[0];
+                popup_271d92c8c7a5e2a3cb8c17e2ec10d94d.setContent(html_5f9545d829ddc8511e10e0e18aa52a68);
+            
+        
+
+        circle_marker_3c035d329881ed78b0dd13537bd87e49.bindPopup(popup_271d92c8c7a5e2a3cb8c17e2ec10d94d)
+        ;
+
+        
+    
+    
+            var circle_marker_44c018182adca6ce18ee05be7a805138 = L.circleMarker(
+                [-14.4036262, -56.4364488],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.49513886235736, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_5b9f457828c5051ef149f340dad19e28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec42321d3649a90d5e4ee4ab8ff47594 = $(`<div id="html_ec42321d3649a90d5e4ee4ab8ff47594" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> diamantino<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 1,107,527.64                 </div>`)[0];
+                popup_5b9f457828c5051ef149f340dad19e28.setContent(html_ec42321d3649a90d5e4ee4ab8ff47594);
+            
+        
+
+        circle_marker_44c018182adca6ce18ee05be7a805138.bindPopup(popup_5b9f457828c5051ef149f340dad19e28)
+        ;
+
+        
+    
+    
+            var circle_marker_e87844858678407186f71bdf719e0aaa = L.circleMarker(
+                [-15.5430787, -55.1590511],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.055036084140827, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_e250b61ca6ec485eae5b49c35b800364 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f3aae6b6391ccb7c53bdcaf1c60ff96 = $(`<div id="html_7f3aae6b6391ccb7c53bdcaf1c60ff96" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> campo verde<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 982,943.40                 </div>`)[0];
+                popup_e250b61ca6ec485eae5b49c35b800364.setContent(html_7f3aae6b6391ccb7c53bdcaf1c60ff96);
+            
+        
+
+        circle_marker_e87844858678407186f71bdf719e0aaa.bindPopup(popup_e250b61ca6ec485eae5b49c35b800364)
+        ;
+
+        
+    
+    
+            var circle_marker_5966bc46f8f1dc8091abb367801d8f09 = L.circleMarker(
+                [-17.8856178, -51.7202967],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.586153238420486, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_31e715ab793f6e680eeacfc80d019c30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c786c3436cb202cf204b46fddd8b9ca5 = $(`<div id="html_c786c3436cb202cf204b46fddd8b9ca5" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> jataí<br>                 <b>Estado:</b> GOIÁS<br>                 <b>GVA Agropecuário:</b> R$ 969,787.08                 </div>`)[0];
+                popup_31e715ab793f6e680eeacfc80d019c30.setContent(html_c786c3436cb202cf204b46fddd8b9ca5);
+            
+        
+
+        circle_marker_5966bc46f8f1dc8091abb367801d8f09.bindPopup(popup_31e715ab793f6e680eeacfc80d019c30)
+        ;
+
+        
+    
+    
+            var circle_marker_899d9cf50483969c34bdfc8bc43281a1 = L.circleMarker(
+                [-13.8255015, -56.0849262],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.855312103868497, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_8bf809eaaa634d98e6901df45346124d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5972dd9a338a119f926a387017816b39 = $(`<div id="html_5972dd9a338a119f926a387017816b39" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> nova mutum<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 893,162.78                 </div>`)[0];
+                popup_8bf809eaaa634d98e6901df45346124d.setContent(html_5972dd9a338a119f926a387017816b39);
+            
+        
+
+        circle_marker_899d9cf50483969c34bdfc8bc43281a1.bindPopup(popup_8bf809eaaa634d98e6901df45346124d)
+        ;
+
+        
+    
+    
+            var circle_marker_bceeea9a06f2ffab01198ff8e0d229b5 = L.circleMarker(
+                [-21.6502665, -54.7494081],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.586155234224739, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_7cf95c801296a12591f11de254b955e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1f3f5cc114dbafdc948e2e1c9643c7d = $(`<div id="html_e1f3f5cc114dbafdc948e2e1c9643c7d" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> rio brilhante<br>                 <b>Estado:</b> MATO GROSSO DO SUL<br>                 <b>GVA Agropecuário:</b> R$ 857,551.68                 </div>`)[0];
+                popup_7cf95c801296a12591f11de254b955e2.setContent(html_e1f3f5cc114dbafdc948e2e1c9643c7d);
+            
+        
+
+        circle_marker_bceeea9a06f2ffab01198ff8e0d229b5.bindPopup(popup_7cf95c801296a12591f11de254b955e2)
+        ;
+
+        
+    
+    
+            var circle_marker_314da55376d1e41d3ff2560ec0a81539 = L.circleMarker(
+                [-13.03484, -55.2539048],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+    
+        var popup_3ab52f43c17a41071d636a54bfbb90e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_552e6add6f1239521d8277b634a14eef = $(`<div id="html_552e6add6f1239521d8277b634a14eef" style="width: 100.0%; height: 100.0%;">                 <b>Município:</b> nova ubiratã<br>                 <b>Estado:</b> MATO GROSSO<br>                 <b>GVA Agropecuário:</b> R$ 841,104.83                 </div>`)[0];
+                popup_3ab52f43c17a41071d636a54bfbb90e7.setContent(html_552e6add6f1239521d8277b634a14eef);
+            
+        
+
+        circle_marker_314da55376d1e41d3ff2560ec0a81539.bindPopup(popup_3ab52f43c17a41071d636a54bfbb90e7)
+        ;
+
+        
+    
+    
+            tile_layer_8d136f56d5a025ff30bc781c0b00136a.addTo(map_27e2509a48040ffd443177cb8667d95f);
+        
+</script>
+</html>
