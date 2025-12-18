@@ -14,17 +14,20 @@
       color: #e5e7eb;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 64px 24px;
+    .layout {
+      display: flex;
+      justify-content: center;
     }
 
     h1 {
       font-size: 2.2rem;
       margin-bottom: 12px;
     }
-
+    @media (min-width: 1025px) {
+      .container {
+        padding-left: 260px;
+      }
+    }
     footer {
       background: #020617;
       padding: 24px 0;
@@ -214,152 +217,156 @@
       </nav>
     </div>
   </header>
-  <div class="container"><a href="../index.html" class="back-link">← Back to home</a>
-    <h1 id="top">Wildfire Prediction in Brazil's Central-West Region</h1>
+  <div class="layout">
+    <div class="container"><a href="../index.html" class="back-link">← Back to home</a>
+      <h1 id="top">Wildfire Prediction in Brazil's Central-West Region</h1>
 
-    <h2 id="summary">Project Summary</h2>
+      <h2 id="summary">Project Summary</h2>
 
-    <p>
-      This project develops a machine learning–based approach to predict wildfire
-      occurrences in Brazil’s Central-West region by integrating climatic,
-      spatial, and socioeconomic data. The study combines geospatial analysis
-      with supervised learning techniques to identify key drivers of wildfire risk.
-    </p>
+      <p>
+        This project develops a machine learning–based approach to predict wildfire
+        occurrences in Brazil’s Central-West region by integrating climatic,
+        spatial, and socioeconomic data. The study combines geospatial analysis
+        with supervised learning techniques to identify key drivers of wildfire risk.
+      </p>
 
-    <ul>
-      <li><strong>Problem:</strong> Rising wildfire occurrences in regions with intense agricultural activity.</li>
-      <li><strong>Data:</strong> Fire Radiative Power (FRP), climate variables, and municipal socioeconomic indicators.
-      </li>
-      <li><strong>Approach:</strong> End-to-end pipeline including EDA, feature engineering, and SVM modeling.</li>
-      <li><strong>Key Insight:</strong> Prolonged dry periods are strongly associated with increased wildfire activity.
-      </li>
-      <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
-    </ul>
+      <ul>
+        <li><strong>Problem:</strong> Rising wildfire occurrences in regions with intense agricultural activity.</li>
+        <li><strong>Data:</strong> Fire Radiative Power (FRP), climate variables, and municipal socioeconomic
+          indicators.
+        </li>
+        <li><strong>Approach:</strong> End-to-end pipeline including EDA, feature engineering, and SVM modeling.</li>
+        <li><strong>Key Insight:</strong> Prolonged dry periods are strongly associated with increased wildfire
+          activity.
+        </li>
+        <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
+      </ul>
 
-    <p style="font-size: 0.95rem; color: #94a3b8;">
-      This project was developed as part of my undergraduate thesis in Computer Science.
-    </p>
+      <p style="font-size: 0.95rem; color: #94a3b8;">
+        This project was developed as part of my undergraduate thesis in Computer Science.
+      </p>
 
-    <p>
-      The workflow integrates data acquisition, exploratory data analysis (EDA),
-      climate data processing, data preprocessing, and predictive modeling to
-      analyze the relationship between climatic conditions, socioeconomic activity,
-      and wildfire dynamics.
-    </p>
+      <p>
+        The workflow integrates data acquisition, exploratory data analysis (EDA),
+        climate data processing, data preprocessing, and predictive modeling to
+        analyze the relationship between climatic conditions, socioeconomic activity,
+        and wildfire dynamics.
+      </p>
 
-    <p>
-      The analytical pipeline below provides a high-level overview of the project
-      architecture, illustrating how heterogeneous data sources are transformed
-      into a unified dataset and used for model training and evaluation.
-    </p>
+      <p>
+        The analytical pipeline below provides a high-level overview of the project
+        architecture, illustrating how heterogeneous data sources are transformed
+        into a unified dataset and used for model training and evaluation.
+      </p>
 
-    <div style="text-align: center; margin-top: 32px;">
-      <img src="../assets/images/wildfire_pipeline.png" alt="End-to-end wildfire prediction pipeline" style="
+      <div style="text-align: center; margin-top: 32px;">
+        <img src="../assets/images/wildfire_pipeline.png" alt="End-to-end wildfire prediction pipeline" style="
             width: 100%;
             max-width: 850px;
             border-radius: 14px;
             border: 1px solid #1e293b;
           " />
-      <p style="margin-top: 12px; font-size: 0.95rem; color: #94a3b8;">
-        Figure 1 – End-to-end pipeline illustrating data acquisition, exploratory analysis,
-        climate data processing, preprocessing, and machine learning modeling stages.
+        <p style="margin-top: 12px; font-size: 0.95rem; color: #94a3b8;">
+          Figure 1 – End-to-end pipeline illustrating data acquisition, exploratory analysis,
+          climate data processing, preprocessing, and machine learning modeling stages.
+        </p>
+      </div>
+
+      <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
+      <div class="map-container">
+        <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
+      </div>
+
+      <p style="margin-top: 24px;">
+        The interactive map highlights municipalities with the highest agricultural
+        gross value added (GVA), revealing strong spatial concentration of economic
+        activity in specific regions, which are relevant for wildfire risk modeling.
       </p>
-    </div>
 
-    <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
-    <div class="map-container">
-      <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
-    </div>
+      <div class="map-container">
+        <iframe src="../assets/maps/mapa_top100_frp.html"></iframe>
+      </div>
+      <p style="margin-top: 24px;">
+        This map displays the top 100 municipalities with the highest Fire Radiative
+        Power (FRP) values, indicating areas with significant wildfire activity.
+        The spatial distribution of these fires provides insights into regions
+        most affected by wildfires.
+      </p>
 
-    <p style="margin-top: 24px;">
-      The interactive map highlights municipalities with the highest agricultural
-      gross value added (GVA), revealing strong spatial concentration of economic
-      activity in specific regions, which are relevant for wildfire risk modeling.
-    </p>
+      <div class="map-container">
+        <iframe src="../assets/maps/crossed_data.html"></iframe>
+      </div>
+      <p>
+        The crossed data map combines wildfire occurrences (Fire Radiative Power – FRP)
+        with agricultural economic activity (Gross Value Added – GVA) to explore
+        spatial correlations between fire events and economic factors.
+      </p>
 
-    <div class="map-container">
-      <iframe src="../assets/maps/mapa_top100_frp.html"></iframe>
-    </div>
-    <p style="margin-top: 24px;">
-      This map displays the top 100 municipalities with the highest Fire Radiative
-      Power (FRP) values, indicating areas with significant wildfire activity.
-      The spatial distribution of these fires provides insights into regions
-      most affected by wildfires.
-    </p>
+      <ul>
+        <li><strong>Blue pins:</strong> Central-West region</li>
+        <li><strong>Pink pins:</strong> South region</li>
+        <li><strong>Orange pins:</strong> Northeast region</li>
+        <li><strong>Green pins:</strong> North region</li>
+        <li><strong>Red pins:</strong> Southeast region</li>
+      </ul>
 
-    <div class="map-container">
-      <iframe src="../assets/maps/crossed_data.html"></iframe>
-    </div>
-    <p>
-      The crossed data map combines wildfire occurrences (Fire Radiative Power – FRP)
-      with agricultural economic activity (Gross Value Added – GVA) to explore
-      spatial correlations between fire events and economic factors.
-    </p>
+      <p>
+        The visualization reveals that several municipalities with high wildfire
+        occurrences also exhibit significant agricultural economic activity. Notably,
+        Brazil’s Central-West region shows a strong spatial overlap between high Fire
+        Radiative Power (FRP) and elevated agricultural Gross Value Added (GVA),
+        reinforcing the hypothesis that intensive agricultural production is closely
+        associated with increased wildfire incidence. Based on these findings, the
+        Central-West region was selected for further analysis and predictive modeling.
+      </p>
 
-    <ul>
-      <li><strong>Blue pins:</strong> Central-West region</li>
-      <li><strong>Pink pins:</strong> South region</li>
-      <li><strong>Orange pins:</strong> Northeast region</li>
-      <li><strong>Green pins:</strong> North region</li>
-      <li><strong>Red pins:</strong> Southeast region</li>
-    </ul>
+      <h2 id="central-west">Analysis of the Central-West Region</h2>
 
-    <p>
-      The visualization reveals that several municipalities with high wildfire
-      occurrences also exhibit significant agricultural economic activity. Notably,
-      Brazil’s Central-West region shows a strong spatial overlap between high Fire
-      Radiative Power (FRP) and elevated agricultural Gross Value Added (GVA),
-      reinforcing the hypothesis that intensive agricultural production is closely
-      associated with increased wildfire incidence. Based on these findings, the
-      Central-West region was selected for further analysis and predictive modeling.
-    </p>
+      <p>
+        Focusing on Brazil’s Central-West region, this stage of the project investigates
+        the relationship between wildfire activity and key climatic, spatial, and
+        socioeconomic variables. The analysis incorporates meteorological data —
+        including daily precipitation and average daily Fire Radiative Power (FRP) —
+        to better understand temporal patterns and potential drivers of wildfire
+        occurrences.
+      </p>
 
-    <h2 id="central-west-analysis">Analysis of the Central-West Region</h2>
-
-    <p>
-      Focusing on Brazil’s Central-West region, this stage of the project investigates
-      the relationship between wildfire activity and key climatic, spatial, and
-      socioeconomic variables. The analysis incorporates meteorological data —
-      including daily precipitation and average daily Fire Radiative Power (FRP) —
-      to better understand temporal patterns and potential drivers of wildfire
-      occurrences.
-    </p>
-
-    <p>
-      Climatic variables such as temperature, precipitation, humidity, and wind speed
-      were obtained from meteorological stations and made available through the Kaggle
-      dataset
-      <a href="https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region"
-        target="_blank">
-        Hourly Weather Surface Brazil Southeast Region
-      </a>.
-      These data were aggregated to daily metrics to enable direct comparison with
-      wildfire indicators. After calculating daily precipitation averages, these
-      values were merged with daily FRP data at the municipality level to create
-      a comprehensive dataset for analysis. It can also be observed that wildfire
-      occurrences in the Central-West region are strongly associated with municipalities
-      identified as the driest, suggesting that prolonged periods of low precipitation play
-      a key role in increasing wildfire activity.
-    </p>
-    <figure style="text-align: center; margin-top: 32px;">
-      <img src="../assets/maps/dry_cities.png" alt="Top 15 driest municipalities in Brazil's Central-West region" style="
+      <p>
+        Climatic variables such as temperature, precipitation, humidity, and wind speed
+        were obtained from meteorological stations and made available through the Kaggle
+        dataset
+        <a href="https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region"
+          target="_blank">
+          Hourly Weather Surface Brazil Southeast Region
+        </a>.
+        These data were aggregated to daily metrics to enable direct comparison with
+        wildfire indicators. After calculating daily precipitation averages, these
+        values were merged with daily FRP data at the municipality level to create
+        a comprehensive dataset for analysis. It can also be observed that wildfire
+        occurrences in the Central-West region are strongly associated with municipalities
+        identified as the driest, suggesting that prolonged periods of low precipitation play
+        a key role in increasing wildfire activity.
+      </p>
+      <figure style="text-align: center; margin-top: 32px;">
+        <img src="../assets/maps/dry_cities.png" alt="Top 15 driest municipalities in Brazil's Central-West region"
+          style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-      <figcaption style="
+        <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-        Top 15 driest municipalities in Brazil’s Central-West region,
-        based on the average number of days without precipitation.
-      </figcaption>
-    </figure>
+          Top 15 driest municipalities in Brazil’s Central-West region,
+          based on the average number of days without precipitation.
+        </figcaption>
+      </figure>
+    </div>
   </div>
-
   <footer>
     <h3>Contact me</h3>
     <div class="footer-links">
