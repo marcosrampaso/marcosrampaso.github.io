@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Wildfire Prediction | Marcos Rampaso</title>
@@ -54,18 +55,18 @@
     .back-link:hover {
       text-decoration: underline;
     }
-    
-  ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 16px;
-  }
 
-  ul li {
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #e5e7eb;
-  }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #e5e7eb;
+    }
   </style>
 </head>
 
@@ -101,7 +102,7 @@
       The spatial distribution of these fires provides insights into regions
       most affected by wildfires.
     </p>
-    
+
     <div class="map-container">
       <iframe src="../assets/maps/crossed_data.html"></iframe>
     </div>
@@ -123,10 +124,47 @@
       The visualization reveals that several municipalities with high wildfire
       occurrences also exhibit significant agricultural economic activity. Notably,
       Brazil’s Central-West region shows a strong spatial overlap between high Fire
-      Radiative Power (FRP) and elevated agricultural GVA, reinforcing the hypothesis
-      that intensive agricultural production is closely associated with increased
-      wildfire incidence.
+      Radiative Power (FRP) and elevated agricultural Gross Value Added (GVA),
+      reinforcing the hypothesis that intensive agricultural production is closely
+      associated with increased wildfire incidence. Based on these findings, the
+      Central-West region was selected for further analysis and predictive modeling.
     </p>
-  </div>
+
+    <h2>Analysis of the Central-West Region</h2>
+
+    <p>
+      Focusing on Brazil’s Central-West region, this stage of the project investigates
+      the relationship between wildfire activity and key climatic, spatial, and
+      socioeconomic variables. The analysis incorporates meteorological data —
+      including daily precipitation and average daily Fire Radiative Power (FRP) —
+      to better understand temporal patterns and potential drivers of wildfire
+      occurrences.
+    </p>
+
+    <p>
+      Climatic variables such as temperature, precipitation, humidity, and wind speed
+      were obtained from meteorological stations and made available through the Kaggle
+      dataset
+      <a href="https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region"
+        target="_blank">
+        Hourly Weather Surface Brazil Southeast Region
+      </a>.
+      These data were aggregated to daily metrics to enable direct comparison with
+      wildfire indicators. After calculating daily precipitation averages, these
+      values were merged with daily FRP data at the municipality level to create
+      a comprehensive dataset for analysis. It can also be observed that wildfire
+      occurrences in the Central-West region are strongly associated with municipalities
+      identified as the driest, suggesting that prolonged periods of low precipitation play
+      a key role in increasing wildfire activity.
+    </p>
+    <div style="text-align: center; margin-top: 32px;">
+      <img src="../assets/maps/dry_cities.png" alt="Driest municipalities in the Central-West region" style="
+      width: 100%;
+      max-width: 800px;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+    " />
+    </div>
 </body>
+
 </html>
