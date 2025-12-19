@@ -175,6 +175,45 @@
             border-bottom: 1px solid #1e293b;
         }
 
+        /* Skills section */
+        .skills {
+            margin-top: 80px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .skill-card {
+            padding: 24px;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            background: #020617;
+            text-align: center;
+        }
+
+        .skill-image {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+
+        .skill-title {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #e5e7eb;
+        }
+
+        .skill-description {
+            font-size: 0.95rem;
+            color: #cbd5f5;
+            line-height: 1.6;
+        }
+
         .header-container {
             max-width: 900px;
             margin: 0 auto;
@@ -269,6 +308,59 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- Skills -->
+    <div class="skills">
+        <h3>Skills</h3>
+
+        <div class="skills-grid">
+
+            <!-- Python -->
+            <div class="skill-card">
+                <img src="assets/images/python.png" alt="Python logo" class="skill-image" />
+                <div class="skill-title">Python</div>
+                <p class="skill-description">
+                    Strong experience using Python for data analysis, machine learning,
+                    and end-to-end data pipelines. Applied extensively in academic projects
+                    and real-world problem solving, including data preprocessing,
+                    visualization, and model development.
+                </p>
+            </div>
+
+            <!-- Data Visualization -->
+            <div class="skill-card">
+                <img src="assets/images/data-visualization.png" alt="Data Visualization" class="skill-image" />
+                <div class="skill-title">Data Visualization</div>
+                <p class="skill-description">
+                    Experience creating clear and insightful visualizations to explore
+                    patterns and communicate results, using tools such as Matplotlib,
+                    Seaborn, and interactive geospatial maps for data-driven storytelling.
+                </p>
+            </div>
+
+            <!-- SQL -->
+            <div class="skill-card">
+                <img src="assets/images/sql.png" alt="SQL database" class="skill-image" />
+                <div class="skill-title">SQL</div>
+                <p class="skill-description">
+                    Solid foundation in SQL for querying, filtering, and aggregating
+                    structured data. Used to support analytical workflows, data extraction,
+                    and integration of multiple data sources.
+                </p>
+            </div>
+
+            <!-- Azure -->
+            <div class="skill-card">
+                <img src="assets/images/azure-az900.png" alt="Azure AZ-900 certificate" class="skill-image" />
+                <div class="skill-title">Azure (In Progress)</div>
+                <p class="skill-description">
+                    Currently studying Microsoft Azure fundamentals, focusing on cloud
+                    concepts, core services, security, and data-related solutions.
+                    Preparing for the AZ-900 certification.
+                </p>
+            </div>
+
         </div>
     </div>
     </div>
