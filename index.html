@@ -187,14 +187,22 @@
             margin: 0 auto;
         }
 
+        /* viewport controla o corte */
+        .skills-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* trilho que desliza */
         .skills-carousel {
             display: flex;
             gap: 24px;
-            overflow: hidden;
+            transition: transform 0.35s ease;
         }
 
+        /* 3 cards EXATOS por tela */
         .skill-card {
-            flex: 0 0 calc(33.333% - 16px);
+            flex: 0 0 calc((100% - 48px) / 3);
             padding: 24px;
             border: 1px solid #1e293b;
             border-radius: 14px;
@@ -307,16 +315,16 @@
     function slideSkills(direction) {
         const carousel = document.getElementById("skillsCarousel");
         const cards = carousel.children.length;
-        const visibleCards = 3;
+        const visible = 3;
 
         currentIndex += direction;
 
+        const maxIndex = cards - visible;
         if (currentIndex < 0) currentIndex = 0;
-        if (currentIndex > cards - visibleCards) currentIndex = cards - visibleCards;
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        const offset = currentIndex * (carousel.children[0].offsetWidth + 24);
-        carousel.style.transform = `translateX(-${offset}px)`;
-        carousel.style.transition = "transform 0.3s ease";
+        const cardWidth = carousel.children[0].offsetWidth + 24;
+        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     }
 </script>
 
@@ -383,7 +391,8 @@
         </div>
     </div>
     <!-- Skills -->
-    <div class="skills">
+    <div class="skills-viewport">
+        <div class="skills-carousel" id="skillsCarousel">
         <h3>Skills</h3>
 
         <div class="skills-wrapper">
@@ -454,6 +463,7 @@
             </div>
 
             <button class="skills-arrow right" onclick="slideSkills(1)">&#10095;</button>
+        </div>
         </div>
     </div>
     </div>
