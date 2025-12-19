@@ -189,11 +189,11 @@
 
         /* viewport controla o corte */
         .skills-viewport {
-            overflow: hidden;
+            overflow: visible; /* permite que o hover do card apareça */
             width: 100%;
-            max-width: 960px; /* aumenta a área visível */
-            margin: 0 auto;   /* centraliza */
-            padding: 0 12px;  /* evita corte nas bordas */
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 12px;
         }
 
         /* trilho que desliza */
@@ -205,6 +205,7 @@
 
         /* 3 cards EXATOS por tela */
         .skill-card {
+            box-sizing: border-box; /* padding e borda entram na largura */
             flex: 0 0 calc((100% - 48px) / 3);
             padding: 24px;
             border: 1px solid #1e293b;
@@ -213,7 +214,6 @@
             text-align: center;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
         }
-
         .skill-card:hover {
             transform: translateY(-6px);
             border-color: #38bdf8;
