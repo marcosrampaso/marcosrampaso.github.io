@@ -193,7 +193,6 @@
             width: 100%;
             max-width: 960px; /* aumenta a área visível */
             margin: 0 auto;   /* centraliza */
-            padding: 0 12px;  /* evita corte nas bordas */
         }
 
         /* trilho que desliza */
@@ -203,9 +202,8 @@
             transition: transform 0.35s ease;
         }
 
-        /* 3 cards EXATOS por tela */
         .skill-card {
-            flex: 0 0 calc((100% - 48px) / 3);
+            flex: 0 0 calc((100% - 24px) / 2); /* 2 cards + gap de 24px */
             padding: 24px;
             border: 1px solid #1e293b;
             border-radius: 14px;
@@ -318,7 +316,7 @@ let currentIndex = 0;
 function slideSkills(direction) {
     const carousel = document.getElementById("skillsCarousel");
     const cards = carousel.children.length;
-    const visibleCards = 3;
+    const visibleCards = 2; // Number of cards visible per view
 
     currentIndex += direction * visibleCards;
 
