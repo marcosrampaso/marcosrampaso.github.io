@@ -23,11 +23,13 @@
       font-size: 2.2rem;
       margin-bottom: 12px;
     }
+
     @media (min-width: 1025px) {
       .container {
         padding-left: 260px;
       }
     }
+
     footer {
       background: #020617;
       padding: 24px 0;
@@ -45,29 +47,29 @@
 
     .footer-links {
       display: flex;
-      justify-content: center;
-      gap: 22px;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
     }
 
     .footer-link {
-      width: 26px;
-      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
       transition: color 0.2s ease;
+    }
+
+    .footer-link svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
     }
 
     .footer-link:hover {
       color: #38bdf8;
-    }
-
-    .footer-link svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
     }
 
     p {
@@ -160,6 +162,7 @@
       width: 220px;
       font-size: 0.85rem;
     }
+
     .toc h4 {
       margin-bottom: 10px;
       color: #94a3b8;
@@ -274,9 +277,13 @@
       </div>
 
       <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
-      
+
       <p style="margin-top: 24px;">
-        The interactive map highlights municipalities with the highest agricultural
+        The first part of the project involved exploratory data analysis (EDA) to understand
+        the spatial distribution of wildfire occurrences and their relationship with
+        socioeconomic factors. I've created several interactive maps to visualize key aspects of the data.
+
+        The interactive map bellow highlights municipalities with the highest agricultural
         gross value added (GVA), revealing strong spatial concentration of economic
         activity in specific regions, which are relevant for wildfire risk modeling.
       </p>
@@ -285,31 +292,20 @@
         <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
       </div>
 
-      <p style="margin-top: 24px;">
-        The interactive map highlights municipalities with the highest agricultural
-        gross value added (GVA), revealing strong spatial concentration of economic
-        activity in specific regions, which are relevant for wildfire risk modeling.
-      </p>
-
+      <h3 style="margin-top: 32px;">Top 100 Municipalities by Fire Radiative Power (FRP)</h3>
+      After identifying economically significant municipalities, I analyzed wildfire
+      occurrences using Fire Radiative Power (FRP) data. The following interactive map
+      visualizes the top 100 municipalities with the highest FRP values.
       <div class="map-container">
         <iframe src="../assets/maps/mapa_top100_frp.html"></iframe>
       </div>
-      <p style="margin-top: 24px;">
-        This map displays the top 100 municipalities with the highest Fire Radiative
-        Power (FRP) values, indicating areas with significant wildfire activity.
-        The spatial distribution of these fires provides insights into regions
-        most affected by wildfires.
-      </p>
 
-      <div class="map-container">
-        <iframe src="../assets/maps/crossed_data.html"></iframe>
-      </div>
-      <p>
-        The crossed data map combines wildfire occurrences (Fire Radiative Power – FRP)
-        with agricultural economic activity (Gross Value Added – GVA) to explore
-        spatial correlations between fire events and economic factors.
-      </p>
-
+      <h3 style="margin-top: 32px;">Crossed Data Analysis: FRP and GVA</h3>
+      To explore the relationship between wildfire occurrences and economic activity,
+      I created a crossed data map combining Fire Radiative Power (FRP) with agricultural
+      Gross Value Added (GVA). This visualization helps identify spatial correlations
+      between fire events and economic factors.
+      
       <ul>
         <li><strong>Blue pins:</strong> Central-West region</li>
         <li><strong>Pink pins:</strong> South region</li>
@@ -317,6 +313,9 @@
         <li><strong>Green pins:</strong> North region</li>
         <li><strong>Red pins:</strong> Southeast region</li>
       </ul>
+      <div class="map-container">
+        <iframe src="../assets/maps/crossed_data.html"></iframe>
+      </div>
 
       <p>
         The visualization reveals that several municipalities with high wildfire
@@ -375,43 +374,41 @@
       </figure>
     </div>
   </div>
+
+  <!-- Footer -->
   <footer>
     <h3>Contact me</h3>
-    <div class="footer-links">
+    <div class="footer-links"
+      style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
 
-      <!-- LinkedIn -->
-      <a class="footer-link" href="https://www.linkedin.com/in/marcos-bezner/" target="_blank" title="LinkedIn">
-        <svg viewBox="0 0 24 24">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-      </a>
 
       <!-- Phone -->
-      <a class="footer-link" href="tel:+5511991119255" title="Phone">
-        <svg viewBox="0 0 24 24">
+      <a class="footer-link" href="tel:+5511991119255" style="display: flex; align-items: center; gap: 6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
           <path
-            d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.9.32 1.77.59 2.6a2 2 0 0 1-.45 2.11L10 10a16 16 0 0 0 6 6l.57-.23a2 2 0 0 1 2.11.45c.83.27 1.7.47 2.6.59a2 2 0 0 1 1.72 2z">
-          </path>
+            d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-10.05 0-18-7.95-18-18a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.35.27 2.67.76 3.88.12.27.06.58-.21 1.11l-2.2 2.2z" />
         </svg>
+        <span class="footer-text">+55 11 991119-9255</span>
       </a>
 
       <!-- Email -->
-      <a class="footer-link" href="mailto:marcosbezner@gmail.com" title="Email">
-        <svg viewBox="0 0 24 24">
-          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-          <path d="M22 6 12 13 2 6"></path>
+      <a class="footer-link" href="mailto:marcosbezner@gmail.com" style="display: flex; align-items: center; gap: 6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 16V6.97l-8 7.99-8-7.99V20h16z" />
         </svg>
+        <span class="footer-text">marcosbezner@gmail.com</span>
+      </a>
+      <!-- LinkedIn -->
+      <a class="footer-link" href="https://www.linkedin.com/in/marcos-bezner/" target="_blank"
+        style="display: flex; align-items: center; gap: 6px;">
+        <img src="../assets/images/LinkedIn_2021.svg.png" alt="LinkedIn" style="height:24px;">
       </a>
 
       <!-- GitHub -->
-      <a class="footer-link" href="https://github.com/marcosrampaso" target="_blank" title="GitHub">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-          </path>
-        </svg>
+      <a class="footer-link" href="https://github.com/marcosrampaso" target="_blank"
+        style="display: flex; align-items: center; gap: 6px;">
+        <img src="../assets/images/github_logo.png" alt="GitHub" style="height:40px;">
       </a>
 
     </div>
