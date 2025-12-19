@@ -310,22 +310,23 @@
 </head>
 
 <script>
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function slideSkills(direction) {
-        const carousel = document.getElementById("skillsCarousel");
-        const cards = carousel.children.length;
-        const visible = 3;
+function slideSkills(direction) {
+    const carousel = document.getElementById("skillsCarousel");
+    const cards = carousel.children.length;
+    const visibleCards = 3;
 
-        currentIndex += direction;
+    currentIndex += direction * visibleCards;
 
-        const maxIndex = cards - visible;
-        if (currentIndex < 0) currentIndex = 0;
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-        const cardWidth = carousel.children[0].offsetWidth + 24;
-        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > cards - visibleCards) {
+        currentIndex = cards - visibleCards;
     }
+
+    const cardWidth = carousel.children[0].offsetWidth + 24;
+    carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
 </script>
 
 <body>
@@ -391,80 +392,82 @@
         </div>
     </div>
     <!-- Skills -->
-    <div class="skills-viewport">
-        <div class="skills-carousel" id="skillsCarousel">
+    <div class="skills">
         <h3>Skills</h3>
 
         <div class="skills-wrapper">
             <button class="skills-arrow left" onclick="slideSkills(-1)">&#10094;</button>
 
-            <div class="skills-carousel" id="skillsCarousel">
+            <div class="skills-viewport">
+                <div class="skills-carousel" id="skillsCarousel">
 
-                <!-- Python -->
-                <div class="skill-card">
-                    <img src="assets/images/python_logo.png" class="skill-image" />
-                    <div class="skill-title">Python</div>
-                    <p class="skill-description">
-                        Extensive experience using Python for data analysis, machine learning,
-                        and building end-to-end data pipelines in academic and applied projects.
-                    </p>
+                    <!-- Python -->
+                    <div class="skill-card">
+                        <img src="assets/images/python_logo.png" class="skill-image" />
+                        <div class="skill-title">Python</div>
+                        <p class="skill-description">
+                            Extensive experience using Python for data analysis, machine learning,
+                            and building end-to-end data pipelines in academic and applied projects.
+                        </p>
+                    </div>
+
+                    <!-- Machine Learning -->
+                    <div class="skill-card">
+                        <img src="assets/images/machine_learning_logo.png" class="skill-image" />
+                        <div class="skill-title">Machine Learning</div>
+                        <p class="skill-description">
+                            Hands-on experience with supervised learning models such as SVM, KNN,
+                            Decision Trees, feature engineering, model evaluation, and handling
+                            imbalanced datasets.
+                        </p>
+                    </div>
+
+                    <!-- Data Visualization -->
+                    <div class="skill-card">
+                        <img src="assets/images/data_vis.png" class="skill-image" />
+                        <div class="skill-title">Data Visualization</div>
+                        <p class="skill-description">
+                            Development of clear and insightful visualizations using Matplotlib,
+                            Seaborn, and interactive geospatial maps.
+                        </p>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="skill-card">
+                        <img src="assets/images/sql_logo.png" class="skill-image" />
+                        <div class="skill-title">SQL</div>
+                        <p class="skill-description">
+                            Strong foundation in SQL for querying, aggregating, and integrating
+                            structured datasets.
+                        </p>
+                    </div>
+
+                    <!-- Excel -->
+                    <div class="skill-card">
+                        <img src="assets/images/excel_logo.png" class="skill-image" />
+                        <div class="skill-title">Excel</div>
+                        <p class="skill-description">
+                            Experience with Excel for data cleaning, pivot tables,
+                            and exploratory analysis.
+                        </p>
+                    </div>
+
+                    <!-- Azure -->
+                    <div class="skill-card">
+                        <img src="assets/images/azure_logo.png" class="skill-image" />
+                        <div class="skill-title">Azure (In Progress)</div>
+                        <p class="skill-description">
+                            Studying Microsoft Azure fundamentals (AZ-900), focusing on
+                            cloud concepts and data services.
+                        </p>
+                    </div>
+
                 </div>
-
-                <!-- Machine Learning -->
-                <div class="skill-card">
-                    <img src="assets/images/machine_learning_logo.png" class="skill-image" />
-                    <div class="skill-title">Machine Learning</div>
-                    <p class="skill-description">
-                        Hands-on experience with supervised learning models such as SVM, KNN, Decision Trees,
-                        feature engineering, model evaluation, and handling imbalanced datasets.
-                    </p>
-                </div>
-
-                <!-- Data Visualization -->
-                <div class="skill-card">
-                    <img src="assets/images/data_vis.png" class="skill-image" />
-                    <div class="skill-title">Data Visualization</div>
-                    <p class="skill-description">
-                        Development of clear and insightful visualizations using Matplotlib,
-                        Seaborn, and interactive geospatial maps to support analysis and storytelling.
-                    </p>
-                </div>
-
-                <!-- SQL -->
-                <div class="skill-card">
-                    <img src="assets/images/sql_logo.png" class="skill-image" />
-                    <div class="skill-title">SQL</div>
-                    <p class="skill-description">
-                        Strong foundation in SQL for querying, aggregating, and integrating
-                        structured datasets to support analytical workflows.
-                    </p>
-                </div>
-
-                <!-- Excel -->
-                <div class="skill-card">
-                    <img src="assets/images/excel_logo.png" class="skill-image" />
-                    <div class="skill-title">Excel</div>
-                    <p class="skill-description">
-                        Experience using Excel for exploratory analysis, data cleaning,
-                        pivot tables, and quick insights during early stages of analysis.
-                    </p>
-                </div>
-
-                <!-- Azure -->
-                <div class="skill-card">
-                    <img src="assets/images/azure_logo.png" class="skill-image" />
-                    <div class="skill-title">Azure (In Progress)</div>
-                    <p class="skill-description">
-                        Studying Microsoft Azure fundamentals, focusing on cloud concepts,
-                        core services, security, and data-related solutions (AZ-900).
-                    </p>
-                </div>
-
             </div>
 
             <button class="skills-arrow right" onclick="slideSkills(1)">&#10095;</button>
         </div>
-        </div>
+    </div>
     </div>
     </div>
 
