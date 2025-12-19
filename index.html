@@ -88,30 +88,32 @@
 
         .footer-links {
             display: flex;
-            justify-content: center;
-            gap: 22px;
+            flex-direction: column; /* organiza links verticalmente, se quiser em linha, use row */
+            gap: 12px; /* espaço entre cada link */
+            align-items: center;
         }
 
         .footer-link {
-            width: 26px;
-            height: 26px;
+            display: inline-flex; /* flex interno para alinhar ícone + texto */
+            align-items: center;
+            gap: 8px; /* espaço entre ícone e texto */
             color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
             transition: color 0.2s ease;
+            height: auto; /* remove altura fixa */
+            width: auto;  /* remove largura fixa */
+        }
+
+        .footer-link svg {
+            width: 24px;  /* tamanho do ícone */
+            height: 24px;
+            flex-shrink: 0; /* impede que o ícone encolha */
         }
 
         .footer-link:hover {
             color: #38bdf8;
-        }
-
-        .footer-link svg {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
+}
 
         /* Projects section */
         .projects {
