@@ -189,11 +189,12 @@
 
         /* viewport controla o corte */
         .skills-viewport {
-            overflow: hidden; /* permite que o hover do card apareça */
+            overflow: hidden;
             width: 100%;
-            max-width: 960px;
+            max-width: 1080px; /* ou o valor que você já ajustou */
             margin: 0 auto;
             padding: 0 12px;
+            min-height: calc(100% + 10px); /* adiciona 10px à altura natural */
         }
 
         /* trilho que desliza */
