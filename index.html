@@ -123,18 +123,43 @@
             margin-bottom: 20px;
             color: #cbd5f5;
             font-size: 0.95rem;
+            line-height: 1.6;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 100%;
+            box-sizing: border-box;
+
             margin-top: 32px;
             padding: 24px;
+
             border: 1px solid #1e293b;
             border-radius: 12px;
             background: #020617;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
         }
 
         .project-image {
             width: 100%;
+            height: 200px;
+            object-fit: cover;
             max-width: 420px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -146,6 +171,7 @@
         }
 
         .project-buttons {
+            margin-top: auto;
             display: flex;
             justify-content: center;
             gap: 14px;
@@ -166,6 +192,39 @@
         .project-button:hover {
             background: #38bdf8;
             color: #020617;
+        }
+
+        /* Projects carousel */
+        .projects-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .projects-viewport {
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+
+        .projects-carousel {
+            display: flex;
+            align-items: stretch;
+            gap: 24px;
+            transition: transform 0.35s ease;
+            flex: 0 0 calc((100% - 24px) / 2);
+            /* 2 cards por tela */
+            height: 100%;
+        }
+
+        .project-card-carousel {
+            overflow: visible;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .project-card-carousel {
+                flex: 0 0 100%;
+            }
         }
 
         header {
@@ -316,8 +375,52 @@
     </style>
 </head>
 
+<!-- Projects Carousel Script -->
 <script>
+    const carousel = document.querySelector('.projects-carousel');
+    const prevBtn = document.getElementById('projects-prev');
+    const nextBtn = document.getElementById('projects-next');
+
     let currentIndex = 0;
+
+    function getCardWidth() {
+        const card = carousel.querySelector('.project-card-carousel');
+        const gap = 24; // mesmo gap do CSS
+        return card.offsetWidth + gap;
+    }
+
+    function updateCarousel() {
+        const offset = currentIndex * getCardWidth();
+        carousel.style.transform = `translateX(-${offset}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        const maxIndex =
+            carousel.children.length -
+            (window.innerWidth <= 900 ? 1 : 2);
+
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        currentIndex = 0;
+        updateCarousel();
+    });
+</script>
+
+<!-- Skills Carousel Script -->
+<script>
+    let carouselIndex = 0;
 
     function slideSkills(direction) {
         const carousel = document.getElementById("skillsCarousel");
@@ -367,35 +470,77 @@
                     that support real-world decision-making.
                 </p>
             </div>
-            <!-- Projects --><!-- Projects -->
-            <div class="projects">
+            <!-- Projects -->
+            <!-- Projects Section -->
+            <section class="projects">
                 <h3>Projects</h3>
 
-                <div class="project-card">
-                    <img src="assets/images/wildfire.jpg" alt="Wildfire Prediction Project" class="project-image" />
+                <div class="projects-wrapper">
+                    <div class="projects-viewport">
+                        <div class="projects-carousel">
 
-                    <div class="project-title">
-                        <strong>Wildfire Prediction in Brazil's Central-West Region using SVM</strong>
-                    </div>
+                            <!-- Project 1 -->
+                            <div class="project-card project-card-carousel">
+                                <img src="assets/images/wildfire.jpg" alt="Wildfire Prediction Project"
+                                    class="project-image" />
 
-                    <p class="project-description">
-                        This project presents an end-to-end machine learning pipeline for predicting wildfire
-                        occurrences in Brazil’s Central-West region. By integrating climatic, socioeconomic, and
-                        satellite-derived fire data, the model identifies high-risk periods and locations with strong
-                        predictive performance (F1-score ≈ 0.99)
-                    </p>
+                                <div class="project-title">
+                                    <strong>Wildfire Prediction in Brazil's Central-West Region using SVM</strong>
+                                </div>
 
-                    <div class="project-buttons">
-                        <a class="project-button" href="projects/wildfire.html">
-                            Data Analysis
-                        </a>
-                        <a class="project-button" href="https://github.com/marcosrampaso/spatial-wildfire-prediction"
-                            target="_blank">
-                            Source Code
-                        </a>
+                                <p class="project-description">
+                                    This project presents an end-to-end machine learning pipeline for predicting
+                                    wildfire
+                                    occurrences in Brazil’s Central-West region. By integrating climatic, socioeconomic,
+                                    and
+                                    satellite-derived fire data, the model identifies high-risk periods and locations
+                                    with
+                                    strong predictive performance (F1-score ≈ 0.99).
+                                </p>
+
+                                <div class="project-buttons">
+                                    <a class="project-button" href="projects/wildfire.html">
+                                        Data Analysis
+                                    </a>
+                                    <a class="project-button"
+                                        href="https://github.com/marcosrampaso/spatial-wildfire-prediction"
+                                        target="_blank">
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="project-card project-card-carousel">
+                                <img src="assets/images/water_potability.jpg" alt="Water Potability Classificator"
+                                    class="project-image" />
+
+                                <div class="project-title">
+                                    <strong>Water Potability Classificator</strong>
+                                </div>
+
+                                <p class="project-description">
+                                    This project analyzes water quality data to classify samples as potable or
+                                    non-potable using a K-Nearest Neighbors (KNN) model. The study includes extensive
+                                    exploratory data analysis with multiple visualizations to understand feature
+                                    behavior and support model evaluation.
+                                </p>
+
+                                <div class="project-buttons">
+                                    <a class="project-button" href="projects/water_potability.html">
+                                        View Project
+                                    </a>
+                                    <a class="project-button"
+                                        href="https://github.com/marcosrampaso/water-potability-classificator"
+                                        target="_blank">
+                                        Source Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>  
+            </section>
         </div>
     </div>
     <!-- Skills -->
