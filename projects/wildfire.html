@@ -116,12 +116,35 @@
       color: #e5e7eb;
     }
 
+
+    /* ================= HEADER ================= */
+
     header {
       position: sticky;
       top: 0;
       z-index: 100;
       background: #020617;
       border-bottom: 1px solid #1e293b;
+      overflow: visible;
+    }
+
+    .header-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 24px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      overflow: visible;
+    }
+
+    .header-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      letter-spacing: 0.03em;
     }
 
     .header-container {
@@ -131,6 +154,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      overflow: visible;
     }
 
     .header-name {
@@ -138,6 +162,208 @@
       font-size: 0.95rem;
       color: #e5e7eb;
       letter-spacing: 0.03em;
+    }
+
+    /* Skills section */
+    .skills {
+      margin-top: -60px;
+      text-align: center;
+    }
+
+    .skills-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* viewport controla o corte */
+    .skills-viewport {
+      overflow: hidden;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 12px 0 12px;
+      /* topo maior para hover */
+    }
+
+    /* trilho que desliza */
+    .skills-carousel {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.35s ease;
+    }
+
+    /* 3 cards EXATOS por tela */
+    .skill-card {
+      box-sizing: border-box;
+      /* padding e borda entram na largura */
+      flex: 0 0 calc((100% - 48px) / 3);
+      padding: 24px;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      background: #020617;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .skill-image {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .skill-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+
+    .skill-description {
+      font-size: 0.95rem;
+      color: #cbd5f5;
+      line-height: 1.6;
+    }
+
+    /* Carousel arrows */
+    .skills-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #020617;
+      border: 1px solid #1e293b;
+      color: #94a3b8;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .skills-arrow:hover {
+      color: #38bdf8;
+      border-color: #38bdf8;
+    }
+
+    .skills-arrow.left {
+      left: -56px;
+    }
+
+    .skills-arrow.right {
+      right: -56px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .skill-card {
+        flex: 0 0 100%;
+      }
+
+      .skills-arrow {
+        display: none;
+      }
+    }
+
+    /* ================= NAV ================= */
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      overflow: visible;
+      /* FUNDAMENTAL */
+    }
+
+    .nav-links a,
+    .nav-link {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-link:hover {
+      color: #38bdf8;
+    }
+
+    /* ================= DROPDOWN ================= */
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ponte invisível anti-perda de hover */
+    .nav-dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 14px;
+    }
+
+    /* dropdown menu */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      /* SEM GAP */
+      left: 0;
+
+      background-color: #020617;
+      border: 1px solid #1e293b;
+      min-width: 260px;
+      border-radius: 10px;
+
+      padding: 8px 0;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      z-index: 9999;
+
+      /* estado fechado */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    /* estado aberto */
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* links do dropdown */
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 20px;
+
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #1e293b;
+      color: #ffffff;
     }
 
     .nav-links {
@@ -223,583 +449,605 @@
 
       <nav class="nav-links">
         <a href="https://marcosrampaso.github.io/index.html">Home</a>
-        <a href="https://marcosrampaso.github.io/projects/wildfire.html">Projects</a>
+
+        <div class="nav-dropdown">
+          <a class="nav-link">
+            Projects ▾
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="https://marcosrampaso.github.io/projects/wildfire.html">
+              Wildfire Prediction
+            </a>
+            <a href="https://marcosrampaso.github.io/projects/brazilian_ecommerce.html">
+              Olist Business Analytics
+            </a>
+          </div>
+        </div>
       </nav>
+    </div>
     </div>
   </header>
   <div class="layout">
     <div class="container"><a href="../index.html" class="back-link">← Back to home</a>
       <h1 id="top">Wildfire Prediction in Brazil's Central-West Region</h1>
       <section style="margin-bottom: 32px;">
-      <h2 id="summary">Project Summary</h2>
+        <h2 id="summary">Project Summary</h2>
 
-      <p>
-        This project develops a machine learning–based approach to predict wildfire
-        occurrences in Brazil’s Central-West region by integrating climatic,
-        spatial, and socioeconomic data. The study combines geospatial analysis
-        with supervised learning techniques to identify key drivers of wildfire risk.
-      </p>
+        <p>
+          This project develops a machine learning–based approach to predict wildfire
+          occurrences in Brazil’s Central-West region by integrating climatic,
+          spatial, and socioeconomic data. The study combines geospatial analysis
+          with supervised learning techniques to identify key drivers of wildfire risk.
+        </p>
 
-      <ul>
-        <li><strong>Problem:</strong> Increasing wildfire occurrences in regions with intensive agricultural activity.
-        </li>
-        <li><strong>Data:</strong> Fire Radiative Power (FRP), climatic variables, and municipal socioeconomic
-          indicators.</li>
-        <li><strong>Approach:</strong> End-to-end data pipeline including exploratory data analysis (EDA), feature
-          engineering, and SVM-based modeling.</li>
-        <li><strong>Key Insight:</strong> Prolonged dry periods show a strong correlation with increased wildfire
-          activity, while municipalities with higher Gross Value Added (GVA) exhibit elevated fire occurrences.</li>
-        <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
-      </ul>
+        <ul>
+          <li><strong>Problem:</strong> Increasing wildfire occurrences in regions with intensive agricultural activity.
+          </li>
+          <li><strong>Data:</strong> Fire Radiative Power (FRP), climatic variables, and municipal socioeconomic
+            indicators.</li>
+          <li><strong>Approach:</strong> End-to-end data pipeline including exploratory data analysis (EDA), feature
+            engineering, and SVM-based modeling.</li>
+          <li><strong>Key Insight:</strong> Prolonged dry periods show a strong correlation with increased wildfire
+            activity, while municipalities with higher Gross Value Added (GVA) exhibit elevated fire occurrences.</li>
+          <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
+        </ul>
 
-      <p>
-        The workflow integrates data acquisition, exploratory data analysis (EDA),
-        climate data processing, data preprocessing, and predictive modeling to
-        analyze the relationship between climatic conditions, socioeconomic activity,
-        and wildfire dynamics.
-      </p>
+        <p>
+          The workflow integrates data acquisition, exploratory data analysis (EDA),
+          climate data processing, data preprocessing, and predictive modeling to
+          analyze the relationship between climatic conditions, socioeconomic activity,
+          and wildfire dynamics.
+        </p>
 
-      <p>
-        The analytical pipeline below provides a high-level overview of the project
-        architecture, illustrating how heterogeneous data sources are transformed
-        into a unified dataset and used for model training and evaluation.
-      </p>
+        <p>
+          The analytical pipeline below provides a high-level overview of the project
+          architecture, illustrating how heterogeneous data sources are transformed
+          into a unified dataset and used for model training and evaluation.
+        </p>
 
-      <div style="text-align: center; margin-top: 32px;">
-        <img src="../assets/images/wildfire_pipeline.png" alt="End-to-end wildfire prediction pipeline" style="
+        <div style="text-align: center; margin-top: 32px;">
+          <img src="../assets/images/wildfire_pipeline.png" alt="End-to-end wildfire prediction pipeline" style="
             width: 100%;
             max-width: 850px;
             border-radius: 14px;
             border: 1px solid #1e293b;
           " />
-        <p style="margin-top: 12px; font-size: 0.95rem; color: #94a3b8;">
-          Figure 1 – End-to-end pipeline illustrating data acquisition, exploratory analysis,
-          climate data processing, preprocessing, and machine learning modeling stages.
+          <p style="margin-top: 12px; font-size: 0.95rem; color: #94a3b8;">
+            Figure 1 – End-to-end pipeline illustrating data acquisition, exploratory analysis,
+            climate data processing, preprocessing, and machine learning modeling stages.
+          </p>
+        </div>
+
+        <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
+
+        <p style="margin-top: 24px;">
+          The first part of the project involved exploratory data analysis (EDA) to understand
+          the spatial distribution of wildfire occurrences and their relationship with
+          socioeconomic factors. I created several interactive maps to visualize key patterns
+          in the data.
+
+          The interactive map below highlights municipalities with the highest agricultural
+          gross value added (GVA), revealing strong spatial concentration of economic
+          activity in specific regions, which are relevant for wildfire risk modeling.
         </p>
-      </div>
 
-      <h2 id="eda">Exploratory Data Analysis (EDA)</h2>
-
-      <p style="margin-top: 24px;">
-        The first part of the project involved exploratory data analysis (EDA) to understand
-        the spatial distribution of wildfire occurrences and their relationship with
-        socioeconomic factors. I created several interactive maps to visualize key patterns
-        in the data.
-
-        The interactive map below highlights municipalities with the highest agricultural
-        gross value added (GVA), revealing strong spatial concentration of economic
-        activity in specific regions, which are relevant for wildfire risk modeling.
-      </p>
-
-      <div class="map-container">
-        <h3 style="
+        <div class="map-container">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Agricultural Economic Concentration — Top 10 Municipalities by GVA
-        </h3>
+            Agricultural Economic Concentration — Top 10 Municipalities by GVA
+          </h3>
 
-        <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
+          <iframe src="../assets/maps/mapa_top10_gva.html"></iframe>
 
-        <p style="
+          <p style="
     margin-top: 12px; 
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Top 10 Brazilian municipalities with the highest agricultural Gross Value Added (GVA) between 2012 and 2022.
+            Top 10 Brazilian municipalities with the highest agricultural Gross Value Added (GVA) between 2012 and 2022.
+          </p>
+        </div>
+
+        <h3 style="margin-top: 32px;">Top 100 Municipalities by Fire Radiative Power (FRP)</h3>
+        After identifying economically significant municipalities, I analyzed wildfire
+        occurrences using Fire Radiative Power (FRP) data. The following interactive map
+        visualizes the top 100 municipalities with the highest FRP values.
+        <div class="map-container">
+          <h3 style="
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e5e7eb;
+    letter-spacing: 0.3px;
+  ">
+            Wildfire Activity Concentration — Top 100 Municipalities by FRP
+          </h3>
+
+          <iframe src="../assets/maps/mapa_top100_frp.html"></iframe>
+          <iframecaption style="
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    ">
+            Top 100 municipalities in Brazil with the highest Fire Radiative Power (FRP)
+            values from 2012 to 2022.
+          </iframecaption>
+        </div>
+
+        <h3 style="margin-top: 32px;">Crossed Data Analysis: FRP and GVA</h3>
+        To explore the relationship between wildfire occurrences and economic activity,
+        I created a crossed data map combining Fire Radiative Power (FRP) with agricultural
+        Gross Value Added (GVA). This visualization helps identify spatial correlations
+        between fire events and economic factors.
+
+        <ul>
+          <li><strong>Blue pins:</strong> Central-West region</li>
+          <li><strong>Pink pins:</strong> South region</li>
+          <li><strong>Orange pins:</strong> Northeast region</li>
+          <li><strong>Green pins:</strong> North region</li>
+          <li><strong>Red pins:</strong> Southeast region</li>
+        </ul>
+        <div class="map-container">
+          <h3 style="
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e5e7eb;
+    letter-spacing: 0.3px;
+  ">
+            Crossed Data Analysis — Fire Radiative Power (FRP) vs. Agricultural Gross Value Added (GVA)
+          </h3>
+          <iframe src="../assets/maps/crossed_data.html"></iframe>
+          <iframecaption style="
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    ">
+            Crossed data map showing municipalities with high Fire Radiative Power (FRP)
+            and agricultural Gross Value Added (GVA) in Brazil.
+          </iframecaption>
+        </div>
+
+        <p>
+          The visualization reveals that several municipalities with high wildfire
+          occurrences also exhibit significant agricultural economic activity. Notably,
+          Brazil’s Central-West region shows a strong spatial overlap between high Fire
+          Radiative Power (FRP) and elevated agricultural Gross Value Added (GVA),
+          reinforcing the hypothesis that intensive agricultural production is closely
+          associated with increased wildfire incidence. Based on these findings, the
+          Central-West region was selected for further analysis and predictive modeling.
         </p>
-      </div>
 
-      <h3 style="margin-top: 32px;">Top 100 Municipalities by Fire Radiative Power (FRP)</h3>
-      After identifying economically significant municipalities, I analyzed wildfire
-      occurrences using Fire Radiative Power (FRP) data. The following interactive map
-      visualizes the top 100 municipalities with the highest FRP values.
-      <div class="map-container">
-        <h3 style="
+
+        <h2 id="selecting-region">Selecting the Region of Interest</h2>
+        <p>
+          Based on the insights obtained from the exploratory data analysis (EDA), Brazil’s Central-West region was
+          strategically selected as the focus area for the wildfire predictive modeling. The region presents a strong
+          spatial association between elevated Fire Radiative Power (FRP) levels and intense agricultural economic
+          activity, positioning it as a highly relevant case study for analyzing wildfire behavior under climatic and
+          socioeconomic influences.
+        </p>
+
+        <p>
+          To support this decision, the 100 municipalities most affected by FRP within the Central-West were identified,
+          and a geographic polygon was defined to delimit the area of interest. This spatial boundary, illustrated in
+          the
+          map below, served as the basis for data filtering, feature aggregation, and subsequent modeling stages.
+        </p>
+
+        <div class="map-container" style="margin-bottom: 48px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Wildfire Activity Concentration — Top 100 Municipalities by FRP
-        </h3>
-
-        <iframe src="../assets/maps/mapa_top100_frp.html"></iframe>
-        <iframecaption style="
+            Geographic Delimitation of Brazil’s Central-West Region
+          </h3>
+          <iframe src="../assets/maps/mapa_centro_oeste.html"></iframe>
+          <iframecaption style="
       margin-top: 12px;
       font-size: 0.9rem;
       color: #94a3b8;
     ">
-          Top 100 municipalities in Brazil with the highest Fire Radiative Power (FRP)
-          values from 2012 to 2022.
-        </iframecaption>
-      </div>
+            Geographic polygon delineating the selected Brazil’s Central-West region,
+            for focused wildfire analysis and modeling.
+          </iframecaption>
+        </div>
 
-      <h3 style="margin-top: 32px;">Crossed Data Analysis: FRP and GVA</h3>
-      To explore the relationship between wildfire occurrences and economic activity,
-      I created a crossed data map combining Fire Radiative Power (FRP) with agricultural
-      Gross Value Added (GVA). This visualization helps identify spatial correlations
-      between fire events and economic factors.
+        <h2 id="climate">Climate Data Processing</h2>
 
-      <ul>
-        <li><strong>Blue pins:</strong> Central-West region</li>
-        <li><strong>Pink pins:</strong> South region</li>
-        <li><strong>Orange pins:</strong> Northeast region</li>
-        <li><strong>Green pins:</strong> North region</li>
-        <li><strong>Red pins:</strong> Southeast region</li>
-      </ul>
-      <div class="map-container">
-        <h3 style="
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #e5e7eb;
-    letter-spacing: 0.3px;
-  ">
-          Crossed Data Analysis — Fire Radiative Power (FRP) vs. Agricultural Gross Value Added (GVA)
-        </h3>
-        <iframe src="../assets/maps/crossed_data.html"></iframe>
-        <iframecaption style="
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    ">
-          Crossed data map showing municipalities with high Fire Radiative Power (FRP)
-          and agricultural Gross Value Added (GVA) in Brazil.
-        </iframecaption>
-      </div>
+        <p>
+          To strengthen the wildfire predictive modeling, climatic data were incorporated into the analysis.
+          Key meteorological variables — including temperature, precipitation, humidity, and wind speed —
+          were obtained from meteorological stations and made available through the Kaggle dataset
+          <a href="https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region"
+            target="_blank">
+            Hourly Weather Surface Brazil Southeast Region
+          </a>.
+          This dataset provides high-resolution hourly measurements across multiple locations in Brazil since 2004.
+        </p>
 
-      <p>
-        The visualization reveals that several municipalities with high wildfire
-        occurrences also exhibit significant agricultural economic activity. Notably,
-        Brazil’s Central-West region shows a strong spatial overlap between high Fire
-        Radiative Power (FRP) and elevated agricultural Gross Value Added (GVA),
-        reinforcing the hypothesis that intensive agricultural production is closely
-        associated with increased wildfire incidence. Based on these findings, the
-        Central-West region was selected for further analysis and predictive modeling.
-      </p>
-
-
-      <h2 id="selecting-region">Selecting the Region of Interest</h2>
-      <p>
-        Based on the insights obtained from the exploratory data analysis (EDA), Brazil’s Central-West region was
-        strategically selected as the focus area for the wildfire predictive modeling. The region presents a strong
-        spatial association between elevated Fire Radiative Power (FRP) levels and intense agricultural economic
-        activity, positioning it as a highly relevant case study for analyzing wildfire behavior under climatic and
-        socioeconomic influences.
-      </p>
-
-      <p>
-        To support this decision, the 100 municipalities most affected by FRP within the Central-West were identified,
-        and a geographic polygon was defined to delimit the area of interest. This spatial boundary, illustrated in the
-        map below, served as the basis for data filtering, feature aggregation, and subsequent modeling stages.
-      </p>
-
-      <div class="map-container" style="margin-bottom: 48px;">
-        <h3 style="
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #e5e7eb;
-    letter-spacing: 0.3px;
-  ">
-          Geographic Delimitation of Brazil’s Central-West Region
-        </h3>
-        <iframe src="../assets/maps/mapa_centro_oeste.html"></iframe>
-        <iframecaption style="
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    ">
-          Geographic polygon delineating the selected Brazil’s Central-West region,
-          for focused wildfire analysis and modeling.
-        </iframecaption>
-      </div>
-
-      <h2 id="climate">Climate Data Processing</h2>
-
-      <p>
-        To strengthen the wildfire predictive modeling, climatic data were incorporated into the analysis.
-        Key meteorological variables — including temperature, precipitation, humidity, and wind speed —
-        were obtained from meteorological stations and made available through the Kaggle dataset
-        <a href="https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region"
-          target="_blank">
-          Hourly Weather Surface Brazil Southeast Region
-        </a>.
-        This dataset provides high-resolution hourly measurements across multiple locations in Brazil since 2004.
-      </p>
-
-      <p>
-        In contrast, the Firewatch dataset contains daily-level information, primarily represented by the
-        median daily precipitation values per municipality. The discrepancy in temporal resolution between
-        the two datasets introduced a significant data integration challenge, requiring the transformation
-        of hourly climatic records into daily aggregated metrics before the datasets could be merged.
-      </p>
-      <div style="overflow-x: auto; margin-top: 24px;">
-        <table style="
+        <p>
+          In contrast, the Firewatch dataset contains daily-level information, primarily represented by the
+          median daily precipitation values per municipality. The discrepancy in temporal resolution between
+          the two datasets introduced a significant data integration challenge, requiring the transformation
+          of hourly climatic records into daily aggregated metrics before the datasets could be merged.
+        </p>
+        <div style="overflow-x: auto; margin-top: 24px;">
+          <table style="
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
     color: #e5e7eb;
   ">
-          <thead>
-            <tr style="background-color: #020617;">
-              <th style="padding: 12px; border: 1px solid #1e293b;">Aspect</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">Climate Dataset (Kaggle)</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">Firewatch Dataset</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Temporal Resolution</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Hourly measurements</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Daily aggregates</td>
-            </tr>
-            <tr style="background-color: #020617;">
-              <td style="padding: 12px; border: 1px solid #1e293b;">Precipitation Metric</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Hourly precipitation values</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Daily median precipitation</td>
-            </tr>
-            <tr>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Spatial Granularity</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Meteorological stations</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">Municipality-level data</td>
-            </tr>
-            <tr style="background-color: #020617;">
-              <td style="padding: 12px; border: 1px solid #1e293b;">Data Processing Required</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">
-                Temporal aggregation (hourly → daily)
-              </td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">
-                Alignment with climatic aggregates
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-top: 16px;">
-          Due to these structural differences, a dedicated preprocessing step was required to compute
-          daily average climatic indicators from the hourly observations. This step was critical to ensure
-          temporal consistency and accurate feature alignment before merging the climatic and wildfire datasets,
-          ultimately enabling reliable model training.
+            <thead>
+              <tr style="background-color: #020617;">
+                <th style="padding: 12px; border: 1px solid #1e293b;">Aspect</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">Climate Dataset (Kaggle)</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">Firewatch Dataset</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Temporal Resolution</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Hourly measurements</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Daily aggregates</td>
+              </tr>
+              <tr style="background-color: #020617;">
+                <td style="padding: 12px; border: 1px solid #1e293b;">Precipitation Metric</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Hourly precipitation values</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Daily median precipitation</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Spatial Granularity</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Meteorological stations</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">Municipality-level data</td>
+              </tr>
+              <tr style="background-color: #020617;">
+                <td style="padding: 12px; border: 1px solid #1e293b;">Data Processing Required</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">
+                  Temporal aggregation (hourly → daily)
+                </td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">
+                  Alignment with climatic aggregates
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 16px;">
+            Due to these structural differences, a dedicated preprocessing step was required to compute
+            daily average climatic indicators from the hourly observations. This step was critical to ensure
+            temporal consistency and accurate feature alignment before merging the climatic and wildfire datasets,
+            ultimately enabling reliable model training.
+          </p>
+        </div>
+        <h2 id="central-west">Central-West Region Analysis</h2>
+
+        <p>
+          After processing and integrating the climatic datasets, a targeted analysis was conducted on Brazil’s
+          Central-West region.
+          The results indicate that several municipalities are subject to prolonged dry periods, which are strongly
+          associated with
+          higher wildfire occurrence rates. These findings reinforce the relevance of climatic conditions as a key
+          driver
+          of wildfire
+          dynamics in the region.
         </p>
-      </div>
-      <h2 id="central-west">Central-West Region Analysis</h2>
 
-      <p>
-        After processing and integrating the climatic datasets, a targeted analysis was conducted on Brazil’s
-        Central-West region.
-        The results indicate that several municipalities are subject to prolonged dry periods, which are strongly
-        associated with
-        higher wildfire occurrence rates. These findings reinforce the relevance of climatic conditions as a key driver
-        of wildfire
-        dynamics in the region.
-      </p>
+        <p>
+          The map below highlights the 15 municipalities most affected by extended drought conditions, providing a clear
+          spatial
+          representation of areas with elevated wildfire risk due to sustained precipitation deficits.
+        </p>
 
-      <p>
-        The map below highlights the 15 municipalities most affected by extended drought conditions, providing a clear
-        spatial
-        representation of areas with elevated wildfire risk due to sustained precipitation deficits.
-      </p>
-
-      <figure style="text-align: left; margin-top: 32px;">
-        <h3 style="
+        <figure style="text-align: left; margin-top: 32px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Prolonged Drought Exposure — Top 15 Municipalities
-        </h3>
+            Prolonged Drought Exposure — Top 15 Municipalities
+          </h3>
 
-        <img src="../assets/maps/dry_cities.png" alt="Top 15 driest municipalities in Brazil's Central-West region"
-          style="
+          <img src="../assets/maps/dry_cities.png" alt="Top 15 driest municipalities in Brazil's Central-West region"
+            style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Top 15 driest municipalities in Brazil’s Central-West region, based on the average number of days without
-          precipitation.
-        </figcaption>
-      </figure>
-      <p>
-        After analyzing the meteorological substations and the climatic datasets, Sorriso emerged as the only
-        municipality
-        consistently present in both the climate and Firewatch datasets, making it an ideal candidate for a more
-        detailed
-        case-specific analysis. For Sorriso, daily precipitation levels were visualized alongside a 7-day Exponential
-        Moving
-        Average (EMA), as shown below.
-      </p>
+            Top 15 driest municipalities in Brazil’s Central-West region, based on the average number of days without
+            precipitation.
+          </figcaption>
+        </figure>
+        <p>
+          After analyzing the meteorological substations and the climatic datasets, Sorriso emerged as the only
+          municipality
+          consistently present in both the climate and Firewatch datasets, making it an ideal candidate for a more
+          detailed
+          case-specific analysis. For Sorriso, daily precipitation levels were visualized alongside a 7-day Exponential
+          Moving
+          Average (EMA), as shown below.
+        </p>
 
-      <figure style="text-align: left; margin-top: 32px;">
-        <h3 style="
+        <figure style="text-align: left; margin-top: 32px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Daily Precipitation with 7-Day EMA — Sorriso Municipality (2018-2019)
-        </h3>
+            Daily Precipitation with 7-Day EMA — Sorriso Municipality (2018-2019)
+          </h3>
 
-        <img src="../assets/maps/daily_sorriso_precipitation.png"
-          alt="Daily precipitation with 7-day EMA for Sorriso municipality" style="
+          <img src="../assets/maps/daily_sorriso_precipitation.png"
+            alt="Daily precipitation with 7-day EMA for Sorriso municipality" style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Daily precipitation levels with a 7-day Exponential Moving Average (EMA) for the municipality of Sorriso.
-        </figcaption>
-      </figure>
-      <p style="font-size: 0.95rem; color: #94a3b8;">
-Note: Climatic trends were analyzed over multiple historical periods, while FRP data from 2024
-was used to illustrate recent wildfire activity patterns.
-</p>
-      <p>
-        Next, the daily Fire Radiative Power (FRP) values for Sorriso were analyzed to visualize wildfire activity over
-        time.
-        A clear peak in fire occurrences is observed between February and March, coinciding with a period of reduced
-        precipitation. Following the onset of the rainy season in mid-March, fire activity declines sharply, reinforcing
-        the strong influence of climatic conditions on wildfire dynamics in the region.
-      </p>
+            Daily precipitation levels with a 7-day Exponential Moving Average (EMA) for the municipality of Sorriso.
+          </figcaption>
+        </figure>
+        <p style="font-size: 0.95rem; color: #94a3b8;">
+          Note: Climatic trends were analyzed over multiple historical periods, while FRP data from 2024
+          was used to illustrate recent wildfire activity patterns.
+        </p>
+        <p>
+          Next, the daily Fire Radiative Power (FRP) values for Sorriso were analyzed to visualize wildfire activity
+          over
+          time.
+          A clear peak in fire occurrences is observed between February and March, coinciding with a period of reduced
+          precipitation. Following the onset of the rainy season in mid-March, fire activity declines sharply,
+          reinforcing
+          the strong influence of climatic conditions on wildfire dynamics in the region.
+        </p>
 
-      <figure style="text-align: left; margin-top: 32px;">
-        <h3 style="
+        <figure style="text-align: left; margin-top: 32px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Fire Radiative Power (FRP) — Sorriso Municipality (2024)
-        </h3>
+            Fire Radiative Power (FRP) — Sorriso Municipality (2024)
+          </h3>
 
-        <img src="../assets/maps/frp_sorriso.png"
-          alt="Daily Fire Radiative Power (FRP) for Sorriso municipality in 2024" style="
+          <img src="../assets/maps/frp_sorriso.png"
+            alt="Daily Fire Radiative Power (FRP) for Sorriso municipality in 2024" style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Daily Fire Radiative Power (FRP) values for Sorriso municipality during 2024.
-        </figcaption>
-      </figure>
+            Daily Fire Radiative Power (FRP) values for Sorriso municipality during 2024.
+          </figcaption>
+        </figure>
 
-      <h2 id="Defining-negative-samples">Defining Negative Samples (Feature Engineering)</h2>
-      <p>
-        In the feature engineering phase, a critical step involved defining negative samples for the predictive
-        modeling task.
-        Negative samples represent days without wildfire occurrences, essential for training a balanced classification
-        model.
-        To accurately identify these instances, Cities were selected based on their proximity to meteorological stations
-        by
-        computing the nearest municipality using latitude and longitude coordinates. If the city was present
-        in the
-        climate dataset, and not in firewatch, it was selected as a negative sample, as exemplified below:
-      </p>
-      <figure style="text-align: left; margin-top: 32px;
+        <h2 id="Defining-negative-samples">Defining Negative Samples (Feature Engineering)</h2>
+        <p>
+          In the feature engineering phase, a critical step involved defining negative samples for the predictive
+          modeling task.
+          Negative samples represent days without wildfire occurrences, essential for training a balanced classification
+          model.
+          To accurately identify these instances, Cities were selected based on their proximity to meteorological
+          stations
+          by
+          computing the nearest municipality using latitude and longitude coordinates. If the city was present
+          in the
+          climate dataset, and not in firewatch, it was selected as a negative sample, as exemplified below:
+        </p>
+        <figure style="text-align: left; margin-top: 32px;
       max-width: 500px;">
-        <h3 style="
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          Negative Sample Definition Example — Sorriso Municipality
-        </h3>
+            Negative Sample Definition Example — Sorriso Municipality
+          </h3>
 
-        <img src="../assets/maps/negative_sample_definition.png"
-          alt="Defining negative samples for Sorriso municipality" style="
+          <img src="../assets/maps/negative_sample_definition.png"
+            alt="Defining negative samples for Sorriso municipality" style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Example of defining negative samples for Sorriso municipality by cross-referencing climate and wildfire
-          datasets.
-        </figcaption>
-      </figure>
+            Example of defining negative samples for Sorriso municipality by cross-referencing climate and wildfire
+            datasets.
+          </figcaption>
+        </figure>
 
-      <p>
-        This systematic approach ensured that the negative samples accurately reflected days without fire activity,
-        providing a robust foundation for training the machine learning model to distinguish between fire and non-fire
-        days effectively.
-      </p>
-      <h3>One-Hot Encoding of Biome Information</h3>
+        <p>
+          This systematic approach ensured that the negative samples accurately reflected days without fire activity,
+          providing a robust foundation for training the machine learning model to distinguish between fire and non-fire
+          days effectively.
+        </p>
+        <h3>One-Hot Encoding of Biome Information</h3>
 
-      <p>
-        To enhance the model’s ability to capture ecological variations influencing wildfire occurrences,
-        one-hot encoding was applied to the <code>biom</code> categorical variable. This transformation
-        converted each biome category into a binary feature, enabling the model to learn distinct patterns
-        associated with different ecological zones. By representing biomes as separate binary indicators,
-        the model was able to more effectively incorporate ecological context into wildfire prediction.
-      </p>
-      <h2 id="modeling">SVM Modeling and Evaluation</h2>
+        <p>
+          To enhance the model’s ability to capture ecological variations influencing wildfire occurrences,
+          one-hot encoding was applied to the <code>biom</code> categorical variable. This transformation
+          converted each biome category into a binary feature, enabling the model to learn distinct patterns
+          associated with different ecological zones. By representing biomes as separate binary indicators,
+          the model was able to more effectively incorporate ecological context into wildfire prediction.
+        </p>
+        <h2 id="modeling">SVM Modeling and Evaluation</h2>
 
-      <p>
-        For the predictive modeling task, the Support Vector Machine (SVM) algorithm was selected due to its
-        robust performance in high-dimensional feature spaces and its effectiveness in binary classification
-        problems. The model was trained using a comprehensive feature set that combined climatic variables
-        with engineered features, including negative samples and one-hot encoded biome information.
-      </p>
+        <p>
+          For the predictive modeling task, the Support Vector Machine (SVM) algorithm was selected due to its
+          robust performance in high-dimensional feature spaces and its effectiveness in binary classification
+          problems. The model was trained using a comprehensive feature set that combined climatic variables
+          with engineered features, including negative samples and one-hot encoded biome information.
+        </p>
 
-      <p>
-        The evaluation results demonstrate strong predictive performance, with the model achieving an
-        F1-score of approximately 0.99. Performance was assessed using multiple evaluation tools, including
-        the confusion matrix, ROC curve, and a comparative F1-score table, which together highlight the
-        model’s ability to accurately distinguish between fire and non-fire events while maintaining a
-        balanced trade-off between precision and recall.
-      </p>
+        <p>
+          The evaluation results demonstrate strong predictive performance, with the model achieving an
+          F1-score of approximately 0.99. Performance was assessed using multiple evaluation tools, including
+          the confusion matrix, ROC curve, and a comparative F1-score table, which together highlight the
+          model’s ability to accurately distinguish between fire and non-fire events while maintaining a
+          balanced trade-off between precision and recall.
+        </p>
 
-      <div style="overflow-x: auto; margin-top: 24px;">
-        <table style="
+        <div style="overflow-x: auto; margin-top: 24px;">
+          <table style="
     width: 100%;
     max-width: 600px;
     border-collapse: collapse;
     font-size: 0.95rem;
     color: #e5e7eb;
   ">
-          <thead>
-            <tr style="background-color: #020617;">
-              <th style="padding: 12px; border: 1px solid #1e293b;">Class</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">Precision</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">Recall</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">F1-score</th>
-              <th style="padding: 12px; border: 1px solid #1e293b;">Support</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 12px; border: 1px solid #1e293b;">No Wildfire</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">1.00</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">0.96</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">0.98</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">112</td>
-            </tr>
-            <tr style="background-color: #020617;">
-              <td style="padding: 12px; border: 1px solid #1e293b;">Wildfire</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">0.98</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">1.00</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">0.99</td>
-              <td style="padding: 12px; border: 1px solid #1e293b;">188</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <figure style="text-align: left; margin-top: 32px; max-width: 500px;">
-        <h3 style="
+            <thead>
+              <tr style="background-color: #020617;">
+                <th style="padding: 12px; border: 1px solid #1e293b;">Class</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">Precision</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">Recall</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">F1-score</th>
+                <th style="padding: 12px; border: 1px solid #1e293b;">Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px; border: 1px solid #1e293b;">No Wildfire</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">1.00</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">0.96</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">0.98</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">112</td>
+              </tr>
+              <tr style="background-color: #020617;">
+                <td style="padding: 12px; border: 1px solid #1e293b;">Wildfire</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">0.98</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">1.00</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">0.99</td>
+                <td style="padding: 12px; border: 1px solid #1e293b;">188</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure style="text-align: left; margin-top: 32px; max-width: 500px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   "> Confusion Matrix — SVM Model Performance</h3>
-        <p style="margin-top: 12px; font-size: 0.9rem; color: #94a3b8;">
-          The model demonstrates balanced performance across classes, with high recall for wildfire events,
-          indicating strong sensitivity in identifying fire occurrences.
-        </p>
-        <img src="../assets/maps/confusion_matrix.png" alt="Confusion matrix for SVM model performance" style="
+          <p style="margin-top: 12px; font-size: 0.9rem; color: #94a3b8;">
+            The model demonstrates balanced performance across classes, with high recall for wildfire events,
+            indicating strong sensitivity in identifying fire occurrences.
+          </p>
+          <img src="../assets/maps/confusion_matrix.png" alt="Confusion matrix for SVM model performance" style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          Confusion matrix illustrating the SVM model’s performance in classifying wildfire and non-wildfire events.
-        </figcaption>
-      </figure>
-      <figure style="text-align: left; margin-top: 32px; max-width: 500px;">
-        <h3 style="
+            Confusion matrix illustrating the SVM model’s performance in classifying wildfire and non-wildfire events.
+          </figcaption>
+        </figure>
+        <figure style="text-align: left; margin-top: 32px; max-width: 500px;">
+          <h3 style="
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: #e5e7eb;
     letter-spacing: 0.3px;
   ">
-          <p style="margin-top: 12px; font-size: 0.9rem; color: #94a3b8;">
-            The ROC curve indicates excellent discriminative ability, with an AUC close to 1,
-            reflecting the model’s effectiveness in distinguishing between classes.
-          </p>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: #94a3b8;">
+              The ROC curve indicates excellent discriminative ability, with an AUC close to 1,
+              reflecting the model’s effectiveness in distinguishing between classes.
+            </p>
 
-          ROC Curve — SVM Model Performance
-        </h3>
+            ROC Curve — SVM Model Performance
+          </h3>
 
-        <img src="../assets/maps/roc_curve.png" alt="ROC curve for SVM model performance" style="
+          <img src="../assets/maps/roc_curve.png" alt="ROC curve for SVM model performance" style="
       width: 100%;
       max-width: 800px;
       border-radius: 14px;
       border: 1px solid #1e293b;
     " />
 
-        <figcaption style="
+          <figcaption style="
     margin-top: 12px;
     font-size: 0.9rem;
     color: #94a3b8;
   ">
-          ROC curve illustrating the SVM model’s ability to distinguish between wildfire and non-wildfire events.
-        </figcaption>
-      </figure>
-      <h3>Key Technical Takeaways</h3>
-      <ul>
-        <li>Temporal aggregation was critical for aligning heterogeneous climate and wildfire datasets.</li>
-        <li>Negative sample definition significantly improved class balance and model stability.</li>
-        <li>Lagged precipitation patterns emerged as strong predictors of wildfire occurrence.</li>
-      </ul>
-      <h2 id="conclusion">Conclusion</h2>
+            ROC curve illustrating the SVM model’s ability to distinguish between wildfire and non-wildfire events.
+          </figcaption>
+        </figure>
+        <h3>Key Technical Takeaways</h3>
+        <ul>
+          <li>Temporal aggregation was critical for aligning heterogeneous climate and wildfire datasets.</li>
+          <li>Negative sample definition significantly improved class balance and model stability.</li>
+          <li>Lagged precipitation patterns emerged as strong predictors of wildfire occurrence.</li>
+        </ul>
+        <h2 id="conclusion">Conclusion</h2>
 
-      <p>
-        This project successfully developed a machine learning–based approach to predict wildfire occurrences
-        in Brazil’s Central-West region by integrating climatic, spatial, and socioeconomic data. The SVM model
-        demonstrated strong predictive performance, achieving an F1-score of approximately 0.99, indicating its
-        effectiveness in distinguishing between fire and non-fire events.
+        <p>
+          This project successfully developed a machine learning–based approach to predict wildfire occurrences
+          in Brazil’s Central-West region by integrating climatic, spatial, and socioeconomic data. The SVM model
+          demonstrated strong predictive performance, achieving an F1-score of approximately 0.99, indicating its
+          effectiveness in distinguishing between fire and non-fire events.
 
-        Key insights from the analysis highlighted the significant influence of prolonged dry periods on wildfire
-        activity, as well as the correlation between high agricultural economic activity and increased fire occurrences.
-        These findings underscore the importance of considering both climatic and socioeconomic factors in wildfire risk
-        modeling.
+          Key insights from the analysis highlighted the significant influence of prolonged dry periods on wildfire
+          activity, as well as the correlation between high agricultural economic activity and increased fire
+          occurrences.
+          These findings underscore the importance of considering both climatic and socioeconomic factors in wildfire
+          risk
+          modeling.
 
-        Future work could explore the incorporation of additional data sources, such as satellite imagery and land-use
-        patterns, to further enhance model accuracy and provide more comprehensive wildfire risk assessments. Overall,
-        this study contributes valuable insights into wildfire dynamics in Brazil and offers a robust framework for
-        predictive modeling in similar contexts.
-      </p>
+          Future work could explore the incorporation of additional data sources, such as satellite imagery and land-use
+          patterns, to further enhance model accuracy and provide more comprehensive wildfire risk assessments. Overall,
+          this study contributes valuable insights into wildfire dynamics in Brazil and offers a robust framework for
+          predictive modeling in similar contexts.
+        </p>
     </div>
   </div>
 
