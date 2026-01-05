@@ -236,58 +236,100 @@
       </nav>
     </div>
   </header>
-
   <div class="layout">
     <div class="container">
       <a href="../index.html" class="back-link">← Back to home</a>
+
       <h1 id="top">Olist Customer Retention Analysis</h1>
+
+      <p style="opacity: 0.8; font-style: italic; margin-bottom: 24px;">
+        🚧 This project is currently in progress. The analysis, modeling, and insights are being continuously refined.
+      </p>
 
       <section style="margin-bottom: 32px;">
         <h2>Project Overview</h2>
         <p>
-          This project uses the <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data">Brazilian
-            E-Commerce Public Dataset by Olist</a> to explore customer retention and identify clients at risk of churn.
-          By analyzing purchase history, order frequency, ticket value, product categories, and reviews, we aim to
-          uncover patterns that predict which customers may stop buying and generate actionable insights to improve
-          retention strategies.
+          This project analyzes the
+          <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data">
+            Brazilian E-Commerce Public Dataset by Olist
+          </a>
+          to understand customer behavior and identify patterns related to customer churn and retention.
+          The goal is to translate data-driven findings into actionable business insights that support
+          customer retention strategies in e-commerce.
         </p>
       </section>
 
       <h2 id="summary">Project Summary</h2>
       <p>
-        As an ecommerce operations manager, the key question is:
-        <strong>"Which customers are at risk of leaving, and what patterns in their behavior indicate potential
-          churn?"</strong>
-        This project integrates data cleaning, exploratory data analysis (EDA), feature engineering, and supervised
-        machine learning to predict churn and provide actionable recommendations for improving customer retention.
+        From a business perspective, a key question for e-commerce operations is:
+        <strong>
+          "Which customers are unlikely to return, and what behavioral patterns can indicate churn risk?"
+        </strong>
+      </p>
+
+      <p>
+        This project follows an end-to-end data science workflow, including data cleaning,
+        exploratory data analysis (EDA), feature engineering, and churn-oriented customer analysis.
+        Predictive modeling is planned as a next step.
       </p>
 
       <ul>
-        <li><strong>Problem:</strong> Losing customers reduces revenue and affects long-term business growth.</li>
-        <li><strong>Data:</strong> Real-world Olist dataset with 100k+ orders from 2016 to 2018, including customer,
-          seller, product, payment, shipping, and review information.</li>
-        <li><strong>Approach:</strong> End-to-end workflow with EDA, feature engineering, predictive modeling (Random
-          Forest / XGBoost), and visualization.</li>
-        <li><strong>Key Insight:</strong> Customer churn is influenced by purchase frequency, delayed deliveries, ticket
-          value, and satisfaction ratings.</li>
-        <li><strong>Result:</strong> Predictive model identifies customers at risk of churn with high accuracy, enabling
-          targeted retention strategies.</li>
+        <li>
+          <strong>Problem:</strong> Low customer retention directly impacts revenue and long-term growth in e-commerce.
+        </li>
+        <li>
+          <strong>Data:</strong> Real-world Olist dataset with 100k+ orders (2016–2018), including customer, order,
+          product, payment, delivery, and review information.
+        </li>
+        <li>
+          <strong>Current Approach:</strong> Exploratory Data Analysis and customer behavior profiling using RFM-style
+          metrics (recency, frequency, monetary value).
+        </li>
+        <li>
+          <strong>Preliminary Insight:</strong> A large portion of customers make only a single purchase, suggesting
+          that
+          churn is often structural and related to product type rather than dissatisfaction.
+        </li>
+        <li>
+          <strong>Next Steps:</strong> Feature engineering and supervised learning models (e.g., Random Forest or
+          XGBoost) to estimate churn risk.
+        </li>
       </ul>
 
       <h2 id="eda">Exploratory Data Analysis</h2>
-      <!-- Aqui você vai adicionar seus gráficos e análises depois -->
+      <p>
+        The exploratory analysis focuses on understanding purchase frequency, customer recency,
+        order value distributions, and product category behavior.
+        Visualizations and statistical summaries are used to highlight patterns related to retention and churn.
+      </p>
+      <!-- Gráficos e análises serão adicionados aqui -->
 
       <h2 id="feature-engineering">Feature Engineering</h2>
-      <!-- Aqui você vai documentar como transformou os dados em features -->
+      <p>
+        Planned features include recency, frequency, monetary value (RFM),
+        delivery delay indicators, review scores, and product category aggregation at the customer level.
+      </p>
+      <!-- Documentação das features será adicionada aqui -->
 
       <h2 id="modeling">Modeling</h2>
-      <!-- Aqui você vai colocar os modelos, métricas e resultados -->
+      <p>
+        The modeling phase will focus on supervised classification techniques to estimate churn probability.
+        Model performance will be evaluated using metrics such as precision, recall, F1-score, and ROC-AUC.
+      </p>
+      <!-- Modelos e métricas serão adicionados aqui -->
 
       <h2 id="insights">Insights & Recommendations</h2>
-      <!-- Aqui você vai mostrar conclusões e recomendações práticas -->
+      <p>
+        Business-oriented insights and recommendations will be derived from both exploratory analysis
+        and model outputs, with a focus on actionable retention strategies.
+      </p>
+      <!-- Insights finais serão adicionados aqui -->
 
       <h2 id="conclusion">Conclusion</h2>
-      <!-- Aqui você vai resumir o projeto e resultados -->
+      <p>
+        This project aims to demonstrate how data analysis can support customer retention decisions in e-commerce.
+        Final conclusions and results will be added as the project progresses.
+      </p>
     </div>
   </div>
   <!-- Footer -->
