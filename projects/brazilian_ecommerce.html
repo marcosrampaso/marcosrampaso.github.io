@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Wildfire Prediction | Marcos Rampaso</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    .layout {
+      display: flex;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    @media (min-width: 1025px) {
+      .container {
+        padding-left: 260px;
+      }
+    }
+
+    footer {
+      background: #020617;
+      padding: 24px 0;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer h3 {
+      margin: 0 0 12px 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .footer-link:hover {
+      color: #38bdf8;
+    }
+
+    p {
+      color: #cbd5f5;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .map-container {
+      margin-top: 48px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+    }
+
+    iframe {
+      width: 100%;
+      height: 520px;
+      border: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #e5e7eb;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .header-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .toc {
+      position: fixed;
+      top: 120px;
+      left: 24px;
+      width: 220px;
+      font-size: 0.85rem;
+    }
+
+    .toc h4 {
+      margin-bottom: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    .toc a {
+      display: block;
+      color: #64748b;
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #38bdf8;
+    }
+
+    /* Ajuste layout principal */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .toc {
+        display: none;
+      }
+
+      .container {
+        margin-left: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="toc">
+      <h4>Contents</h4>
+      <a href="#summary">Project Summary</a>
+      <a href="#eda">Exploratory Data Analysis</a>
+      <a href="#feature-engineering">Feature Engineering</a>
+      <a href="#modeling">Modeling</a>
+      <a href="#insights">Insights & Recommendations</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+    </div>
+  </header>
+
+  <header>
+    <nav class="toc">
+      <h4>Contents</h4>
+      <a href="#summary">Project Summary</a>
+      <a href="#eda">Exploratory Data Analysis</a>
+      <a href="#feature-engineering">Feature Engineering</a>
+      <a href="#modeling">Modeling</a>
+      <a href="#insights">Insights & Recommendations</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+    <div class="header-container">
+      <div class="header-name">Marcos Rampaso</div>
+      <nav class="nav-links">
+        <a href="https://marcosrampaso.github.io/index.html">Home</a>
+        <a href="https://marcosrampaso.github.io/projects/olist.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="container">
+      <a href="../index.html" class="back-link">← Back to home</a>
+      <h1 id="top">Olist Customer Retention Analysis</h1>
+
+      <section style="margin-bottom: 32px;">
+        <h2>Project Overview</h2>
+        <p>
+          This project uses the <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data">Brazilian
+            E-Commerce Public Dataset by Olist</a> to explore customer retention and identify clients at risk of churn.
+          By analyzing purchase history, order frequency, ticket value, product categories, and reviews, we aim to
+          uncover patterns that predict which customers may stop buying and generate actionable insights to improve
+          retention strategies.
+        </p>
+      </section>
+
+      <h2 id="summary">Project Summary</h2>
+      <p>
+        As an ecommerce operations manager, the key question is:
+        <strong>"Which customers are at risk of leaving, and what patterns in their behavior indicate potential
+          churn?"</strong>
+        This project integrates data cleaning, exploratory data analysis (EDA), feature engineering, and supervised
+        machine learning to predict churn and provide actionable recommendations for improving customer retention.
+      </p>
+
+      <ul>
+        <li><strong>Problem:</strong> Losing customers reduces revenue and affects long-term business growth.</li>
+        <li><strong>Data:</strong> Real-world Olist dataset with 100k+ orders from 2016 to 2018, including customer,
+          seller, product, payment, shipping, and review information.</li>
+        <li><strong>Approach:</strong> End-to-end workflow with EDA, feature engineering, predictive modeling (Random
+          Forest / XGBoost), and visualization.</li>
+        <li><strong>Key Insight:</strong> Customer churn is influenced by purchase frequency, delayed deliveries, ticket
+          value, and satisfaction ratings.</li>
+        <li><strong>Result:</strong> Predictive model identifies customers at risk of churn with high accuracy, enabling
+          targeted retention strategies.</li>
+      </ul>
+
+      <h2 id="eda">Exploratory Data Analysis</h2>
+      <!-- Aqui você vai adicionar seus gráficos e análises depois -->
+
+      <h2 id="feature-engineering">Feature Engineering</h2>
+      <!-- Aqui você vai documentar como transformou os dados em features -->
+
+      <h2 id="modeling">Modeling</h2>
+      <!-- Aqui você vai colocar os modelos, métricas e resultados -->
+
+      <h2 id="insights">Insights & Recommendations</h2>
+      <!-- Aqui você vai mostrar conclusões e recomendações práticas -->
+
+      <h2 id="conclusion">Conclusion</h2>
+      <!-- Aqui você vai resumir o projeto e resultados -->
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <h3>Contact me</h3>
+    <div class="footer-links"
+      style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+
+
+      <!-- Phone -->
+      <a class="footer-link" href="tel:+5511991119255" style="display: flex; align-items: center; gap: 6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-10.05 0-18-7.95-18-18a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.35.27 2.67.76 3.88.12.27.06.58-.21 1.11l-2.2 2.2z" />
+        </svg>
+        <span class="footer-text">+55 11 991119-9255</span>
+      </a>
+
+      <!-- Email -->
+      <a class="footer-link" href="mailto:marcosbezner@gmail.com" style="display: flex; align-items: center; gap: 6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 16V6.97l-8 7.99-8-7.99V20h16z" />
+        </svg>
+        <span class="footer-text">marcosbezner@gmail.com</span>
+      </a>
+      <!-- LinkedIn -->
+      <a class="footer-link" href="https://www.linkedin.com/in/marcos-bezner/" target="_blank"
+        style="display: flex; align-items: center; gap: 6px;">
+        <img src="../assets/images/LinkedIn_2021.svg.png" alt="LinkedIn" style="height:24px;">
+      </a>
+
+      <!-- GitHub -->
+      <a class="footer-link" href="https://github.com/marcosrampaso" target="_blank"
+        style="display: flex; align-items: center; gap: 6px;">
+        <img src="../assets/images/github_logo.png" alt="GitHub" style="height:40px;">
+      </a>
+
+    </div>
+  </footer>
+</body>
+
+</html>
