@@ -6,6 +6,37 @@
 <nav class="nav" aria-label="Main navigation"><a href="../index.html#work">Projects</a><a class="nav-about" href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
 </div></header><main id="main" class="case-main"><a class="back-link" href="../index.html#work">← Back to projects</a><p class="eyebrow">Personal application · Backend &amp; document processing</p><h1>Meu Dinheiro</h1><p class="case-lead">A local finance application for turning bank documents and account data into a clear, reviewable picture of personal and business finances.</p>
 <dl class="case-facts"><div><dt>Project type</dt><dd>Personal software project</dd></div><div><dt>Stack</dt><dd>Python, SQLite, JavaScript, macOS WebKit</dd></div><div><dt>Source &amp; delivery</dt><dd>Private repository · Local application</dd></div></dl>
+<section class="case-section" aria-labelledby="demo-title">
+<p class="eyebrow">Inside the application</p>
+<h2 id="demo-title">A closer look at Meu Dinheiro.</h2>
+<p class="gallery-note">Screenshots from the Portuguese interface, using fictional demonstration data. Select an image to open it at full size.</p>
+<div class="demo-gallery">
+  <figure class="demo-shot demo-shot-wide">
+    <a href="../assets/images/meu-dinheiro/finance-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open the finance dashboard screenshot at full size">
+      <img src="../assets/images/meu-dinheiro/finance-dashboard.png" alt="Monthly income and expenses, card invoice totals, and spending by category in the Meu Dinheiro demonstration" width="3420" height="2214" loading="lazy" decoding="async">
+    </a>
+    <figcaption><strong>Monthly finances, in one place</strong>Cash flow, card invoices, and spending categories presented together, with missing or partial statement coverage kept visible.</figcaption>
+  </figure>
+  <figure class="demo-shot">
+    <a href="../assets/images/meu-dinheiro/investment-overview.png" target="_blank" rel="noopener noreferrer" aria-label="Open the investment overview screenshot at full size">
+      <img src="../assets/images/meu-dinheiro/investment-overview.png" alt="Fictional portfolio allocation and per-asset value changes in the Meu Dinheiro investment view" width="3420" height="2214" loading="lazy" decoding="async">
+    </a>
+    <figcaption><strong>Investment overview</strong>Portfolio composition and per-asset changes, with reference dates and data limitations shown alongside the figures.</figcaption>
+  </figure>
+  <figure class="demo-shot">
+    <a href="../assets/images/meu-dinheiro/research-assistant.png" target="_blank" rel="noopener noreferrer" aria-label="Open the research interface screenshot at full size">
+      <img src="../assets/images/meu-dinheiro/research-assistant.png" alt="On-demand investment research interface with model selection and an optional personal-context setting" width="3420" height="2214" loading="lazy" decoding="async">
+    </a>
+    <figcaption><strong>Research with optional context</strong>Controls for requesting research on demand and choosing whether to include aggregated personal context.</figcaption>
+  </figure>
+  <figure class="demo-shot demo-shot-wide">
+    <a href="../assets/images/meu-dinheiro/reserve-planning.png" target="_blank" rel="noopener noreferrer" aria-label="Open the reserve planning screenshot at full size">
+      <img src="../assets/images/meu-dinheiro/reserve-planning.png" alt="Emergency reserve plan with fictional monthly expenses, contribution settings, progress, and a savings projection" width="3420" height="2214" loading="lazy" decoding="async">
+    </a>
+    <figcaption><strong>A plan the user can adjust</strong>Reserve goals, monthly contributions, progress, and a projection based on the entered assumptions.</figcaption>
+  </figure>
+</div>
+</section>
 <section class="case-section"><h2>The problem</h2><p>Bank statements, card invoices, and investment positions arrive in different formats and use different reference dates. A transfer can look like income, and a card payment can be counted again as spending. Organizing these records requires both extraction and reconciliation.</p></section>
 <section class="case-section"><h2>The application</h2><p>Meu Dinheiro brings these sources into a Python application with a browser interface and a macOS desktop preview. Its JSON API supports transaction management, import review, monthly charts, planning, and investment views. Personal and business activity can be explored separately.</p><div class="architecture" role="group" aria-label="Application architecture"><div class="workflow-node"><strong>Inputs</strong>PDF, CSV, OFX, XLSX<br>Authorized provider APIs</div><div class="workflow-node"><strong>Python backend</strong>Parse, validate, reconcile<br>Account-scoped JSON API</div><div class="workflow-node"><strong>Local storage</strong>SQLite per account<br>Import history &amp; settings</div><div class="workflow-node"><strong>Interface</strong>Web dashboard<br>macOS WebKit preview</div></div></section>
 <section class="case-section"><h2>Decisions that matter</h2><div class="case-columns"><div><h3>Review before import</h3><p>Imports show a preview before saving. Duplicate detection, statement coverage, and reconciliation rules help keep overlapping files and internal transfers from distorting the totals.</p><h3>Consistent amounts and dates</h3><p>Transaction amounts are stored in integer cents. Card billing periods and transaction dates are treated separately, and gaps in statement coverage remain visible.</p></div><div><h3>Separate account data</h3><p>Local accounts use separate databases and credential directories. The authenticated server session determines the active account, and the demonstration uses temporary fictional data.</p><h3>AI with human review</h3><p>Optional categorization suggestions can be reviewed before they are applied. Approved categories inform local matching. The demonstration blocks bank connections and external AI calls.</p></div></div></section>

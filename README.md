@@ -22,6 +22,7 @@ Open http://127.0.0.1:8080. There is no build step or package installation.
 - `projects/wildfire.html`: existing research analysis with evaluation context.
 - `projects/brazilian_ecommerce.html`: ongoing Olist analysis, clearly marked as unfinished.
 - `assets/maps/`: existing geographic visualizations.
+- `assets/images/meu-dinheiro/`: four user-provided screenshots of fictional demo data, used in the project card and case study gallery.
 
 ## Editing and publication
 
