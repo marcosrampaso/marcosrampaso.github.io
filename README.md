@@ -16,6 +16,7 @@ Open http://127.0.0.1:8080. There is no build step or package installation.
 
 - `index.html`: services, selected work, experience, skills, and contact.
 - `assets/site.css`: shared responsive styles.
+- `projects/mottu-regulatory.html`: regulatory automation and internal tools for Mottu Mexico, described without internal data or source code.
 - `projects/meu-dinheiro.html`: personal application case study. Its source repository remains private; no private data or application files are bundled.
 - `projects/invoice-extraction.html`: high-level account of professional experience at Coamo.
 - `projects/wildfire.html`: existing research analysis with evaluation context.

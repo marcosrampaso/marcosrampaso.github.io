@@ -220,6 +220,19 @@ li+li {
   display:flex;
   flex-direction:column;
 }
+.project-featured {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+}
+.project-featured .workflow-visual {
+  padding:24px;
+  gap:8px;
+}
+.project-featured .workflow-node {
+  flex:1;
+  min-width:0;
+}
 .project-body {
   padding:28px;
   display:flex;
@@ -335,6 +348,14 @@ li+li {
 .experience p {
   margin:0;
   font-size:.96rem;
+}
+.experience p+p {
+  margin-top:14px;
+}
+.experience a {
+  display:inline-block;
+  margin-top:14px;
+  font-size:.9rem;
 }
 .skills-grid {
   gap:36px;
@@ -535,6 +556,12 @@ iframecaption {
   display:block;
 }
 @media(max-width:760px) {
+  .project-featured {
+    grid-template-columns:minmax(0,1fr);
+  }
+  .project-featured .workflow-visual {
+    padding:22px 16px;
+  }
   .hero {
     grid-template-columns:1fr;
     gap:28px;
