@@ -14,13 +14,16 @@ Open http://127.0.0.1:8080. There is no build step or package installation.
 
 ## Structure
 
-- `index.html`: services, selected work, experience, skills, and contact.
-- `assets/site.css`: shared responsive styles.
-- `projects/mottu-regulatory.html`: regulatory automation and internal tools for Mottu Mexico, described without internal data or source code.
+- `index.html`: selected work, experience, research, and contact.
+- `assets/site.css`: shared responsive styles for light and dark themes.
+- `assets/theme.js`: theme selector that follows the system preference until a visitor chooses a mode.
+- `projects/vpn-broker.html`: on-demand VPN provisioning and its production rollout at Mottu.
+- `projects/mottu-regulatory.html`: vehicle registration, payments, document reissue, and production monitoring for Mottu Mexico.
 - `projects/meu-dinheiro.html`: personal application case study. Its source repository remains private; no private data or application files are bundled.
 - `projects/invoice-extraction.html`: high-level account of professional experience at Coamo.
 - `projects/wildfire.html`: existing research analysis with evaluation context.
 - `projects/brazilian_ecommerce.html`: ongoing Olist analysis, clearly marked as unfinished.
+- `assets/images/covers/`: six generated project illustrations with metrics in the site markup.
 - `assets/maps/`: existing geographic visualizations.
 - `assets/images/meu-dinheiro/`: four user-provided screenshots of fictional demo data, used in the project card and case study gallery.
 

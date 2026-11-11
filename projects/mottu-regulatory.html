@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Regulatory automation for Mottu Mexico | Marcos Bezner</title>
-  <meta name="description" content="Developing 10+ regulatory automations for Mottu Mexico, connecting web portals, internal APIs, and full-stack monitoring tools.">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Vehicle registration, payment automation, and document reissue workflows at Mottu Mexico.">
+  <meta name="theme-color" content="#f7f6f1">
   <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+  <script src="../assets/theme.js"></script>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -18,62 +19,48 @@
         <a href="../index.html#work">Projects</a>
         <a class="nav-about" href="../index.html#experience">Experience</a>
         <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" hidden><span aria-hidden="true"></span></button>
       </nav>
     </div>
   </header>
+
   <main id="main" class="case-main">
     <a class="back-link" href="../index.html#work">← Back to projects</a>
-    <p class="eyebrow">Professional experience · Mottu · Regulatory team</p>
-    <h1>Regulatory automation for Mottu Mexico</h1>
-    <p class="case-lead">I am the primary developer for Mottu Mexico’s regulatory automations, working directly with the team in Mexico and developing more than 10 workflows across web portals and internal systems.</p>
+    <p class="eyebrow">Mottu Mexico · Regulatory operations</p>
+    <h1>Fleet registration &amp; document reissue</h1>
+    <p class="case-lead">I work directly with the Mexico operations team to build and maintain .NET services, browser automations, and the internal tools used to run vehicle registration and document workflows.</p>
 
-    <dl class="case-facts">
-      <div><dt>Formal role</dt><dd>Technology Trainee · Regulatory team</dd></div>
-      <div><dt>Period</dt><dd>May 2026 to present</dd></div>
-      <div><dt>Scope</dt><dd>Browser automation, REST endpoints, Swagger, and internal frontend</dd></div>
-    </dl>
+    <figure class="project-cover cover-mottu-regulatory case-cover">
+      <img src="../assets/images/covers/mottu-regulatory.webp" alt="Illustrated fleet operations center in Mexico with plates and registration cards. Its monitor shows monthly averages of about 1,750 motorcycles and 1,040 payments from May to October 2026." width="1360" height="766" loading="lazy" decoding="async">
+      <figcaption class="cover-metrics">
+        <div class="cover-stat"><strong>635</strong><span>Reissue cases migrated</span></div>
+        <div class="cover-stat"><strong>60%</strong><span>Fewer robot submissions per request</span></div>
+      </figcaption>
+    </figure>
 
     <section class="case-section">
-      <h2>Working directly with the Mexico team</h2>
-      <p>Regulatory processes involve several websites and internal services. I work directly with the people handling these operations in Mexico to understand their requirements and turn them into working automations and internal tools.</p>
-      <p>My responsibility extends from the workflow logic to the connections with company servers and the interfaces used to monitor the automations.</p>
+      <h2>Registration and payments</h2>
+      <p>I build and maintain workflows for first-time plate applications, document reissue, and CURP validation. This includes national vehicle registry checks before first-plate applications, REST integrations with internal services, and automated payment file generation.</p>
+      <p>From May through October 2026, the registration and reissue workflows I maintain in Mexico handled approximately 1,750 motorcycles and 1,040 payments per month on average.</p>
     </section>
 
     <section class="case-section">
-      <h2>What the workflows cover</h2>
-      <ul>
-        <li>Requests for first-time license plates and replacement plates.</li>
-        <li>CURP validation as part of regulatory workflows.</li>
-        <li>Browser interactions across multiple websites used by the operations team.</li>
-        <li>Development and integration of REST endpoints for internal services.</li>
-        <li>API exploration and request testing through Swagger.</li>
-        <li>Integration with the company’s server infrastructure.</li>
-      </ul>
+      <h2>Moving document reissue out of Pipefy</h2>
+      <p>I built an idempotent migration with dry-run validation and moved 635 cases from Pipefy into Mottu’s internal workflow. I integrated DHL shipment tracking and automated eligible approvals using license plate OCR.</p>
+      <p>I also redesigned the RPA workflow, lowering average robot submissions from 2.54 to 1.02 per reissue request, a reduction of about 60%.</p>
     </section>
 
     <section class="case-section">
-      <h2>Connecting automation with internal software</h2>
-      <div class="architecture" role="group" aria-label="High-level regulatory automation workflow">
-        <div class="workflow-node"><strong>Operations</strong>Requirements from the Mexico team</div>
-        <div class="workflow-node"><strong>Automations</strong>Web portals and regulatory requests</div>
-        <div class="workflow-node"><strong>Internal services</strong>APIs and company servers</div>
-        <div class="workflow-node"><strong>Internal interfaces</strong>Monitoring and operational visibility</div>
-      </div>
-      <p>I develop backend services and REST endpoints, use Swagger to consult API documentation and test requests, and build frontend screens for internal use. These interfaces provide visibility into the automations and help the team understand what is happening across the workflows.</p>
+      <h2>Monitoring workflows in production</h2>
+      <p>I built Datadog dashboards, alerts, and a service-level objective using Terraform. I added metrics for regulatory backlogs, payment failures, and integration health across Brazil and Mexico. I also build internal monitoring screens and contribute to automated tests, code reviews, and CI/CD for applications deployed with Docker and Kubernetes.</p>
     </section>
 
-    <section class="case-section">
-      <h2>Development and production support</h2>
-      <p>My broader work at Mottu includes Python and C#/.NET, SQL and PostgreSQL, automated tests, CI/CD, Docker, and Kubernetes. I also investigate production issues using application logs, Datadog, and Grafana/Loki.</p>
-      <p>This work combines hands-on development with direct communication across teams: understanding the operational need, connecting the systems, and making the resulting workflows observable.</p>
-    </section>
-
-    <aside class="notice">This case study describes my responsibilities at a high level. Internal source code, endpoints, credentials, personal records, and operational screenshots remain confidential.</aside>
     <div class="actions">
-      <a class="button primary" href="mailto:marcosbezner@gmail.com">Discuss an automation project</a>
+      <a class="button primary" href="vpn-broker.html">Read about the VPN Broker <span aria-hidden="true">↗</span></a>
       <a class="button" href="../index.html#work">More projects</a>
     </div>
   </main>
+
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <p>Marcos Bezner · São Paulo, Brazil</p>

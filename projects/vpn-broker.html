@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VPN Broker at Mottu | Marcos Bezner</title>
+  <meta name="description" content="Designing and building a shared API for on-demand VPN provisioning at Mottu.">
+  <meta name="theme-color" content="#f7f6f1">
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">Marcos Bezner<span>.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html#work">Projects</a>
+        <a class="nav-about" href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" hidden><span aria-hidden="true"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-main">
+    <a class="back-link" href="../index.html#work">← Back to projects</a>
+    <p class="eyebrow">Mottu · Platform engineering</p>
+    <h1>VPN Broker</h1>
+    <p class="case-lead">I designed and built a shared API that provisions VPN profiles and credentials on demand through time-limited leases.</p>
+
+    <figure class="project-cover cover-vpn-broker case-cover">
+      <img src="../assets/images/covers/vpn-broker.webp" alt="Illustration of a VPN Broker host distributing connections to three automation clients. Its monitor shows about 66,500 lease requests in 30 days and six production deployments." width="1360" height="680" loading="lazy" decoding="async">
+      <figcaption class="cover-metrics">
+        <div class="cover-stat"><strong>~66,500</strong><span>Lease requests in 30 days</span></div>
+        <div class="cover-stat"><strong>6</strong><span>Production deployments</span></div>
+      </figcaption>
+    </figure>
+
+    <section class="case-section">
+      <h2>Replacing per-deployment configuration</h2>
+      <p>Each deployment previously relied on its own VPN configuration bundle. I built the VPN Broker to centralize provisioning so deployments could request a profile and credentials when a workflow needed VPN access.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>How a lease works</h2>
+      <div class="architecture" role="group" aria-label="High-level lease flow">
+        <div class="workflow-node"><strong>Request</strong>A client requests VPN access when it needs a connection.</div>
+        <div class="workflow-node"><strong>Provision</strong>The broker returns a profile and credentials under a time-limited lease.</div>
+        <div class="workflow-node"><strong>Connect</strong>The client uses the leased profile to establish an OpenVPN connection.</div>
+      </div>
+      <p>I implemented the API in C# with ASP.NET Core on .NET 10, PostgreSQL, and Entity Framework Core. I also built a .NET SDK with a local fallback and automated OpenVPN health checks and recovery.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>From pilot to production</h2>
+      <p>The service was piloted in Mexico and enabled across six production Kubernetes deployments configured for VPN access in Brazil, Mexico, and the United States. The broker handled about 66,500 lease requests in a 30-day period.</p>
+    </section>
+
+    <div class="actions">
+      <a class="button primary" href="mottu-regulatory.html">Read about regulatory automation <span aria-hidden="true">↗</span></a>
+      <a class="button" href="../index.html#work">More projects</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Marcos Bezner · São Paulo, Brazil</p>
+      <nav class="footer-links" aria-label="Social links">
+        <a href="mailto:marcosbezner@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/marcos-bezner/">LinkedIn</a>
+        <a href="https://github.com/marcosrampaso">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
