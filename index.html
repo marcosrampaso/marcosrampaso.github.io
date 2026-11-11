@@ -38,7 +38,7 @@
         <div class="hero-copy">
           <p class="eyebrow hero-location">São Paulo, Brazil</p>
           <h1 id="intro-title">Backend systems<br class="hero-break"> for real <em>operations.</em></h1>
-          <p class="intro">I’m Marcos, a software developer building APIs, platform services, and automation with C#/.NET and Python. At Mottu, I work on fleet operations in Mexico.</p>
+          <p class="intro">I’m Marcos, a software developer working with C#/.NET and Python. At Mottu, I build APIs and automations for vehicle registration, payments, and document reissue in Mexico.</p>
           <div class="actions">
             <a class="button primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
             <a class="button" href="https://github.com/marcosrampaso">GitHub <span aria-hidden="true">↗</span></a>
@@ -68,7 +68,7 @@
       <section class="section work-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <h2 id="work-title">Selected work</h2>
-          <p>Production systems at Mottu and Coamo, plus an independent software project.</p>
+          <p>VPN provisioning, fleet workflows, invoice extraction, and a personal finance app.</p>
         </div>
 
         <div class="project-grid">
@@ -132,7 +132,7 @@
             <div class="project-body">
               <p class="project-label">Coamo · Document processing</p>
               <h3>Invoice extraction API</h3>
-              <p>I built a FastAPI application that extracted structured data from 68 PDF invoices collected across Coamo’s branches, and helped deploy it on Azure with Docker and Kubernetes.</p>
+              <p>I built a FastAPI application that extracted structured data from 68 PDF invoices collected from all of Coamo’s branches. I helped deploy it on Azure with Docker and Kubernetes.</p>
               <ul class="tags" aria-label="Technologies">
                 <li>Python</li><li>FastAPI</li><li>SQL / PL/SQL</li><li>Azure</li>
               </ul>
@@ -151,38 +151,46 @@
       <section class="section" id="experience" aria-labelledby="experience-title">
         <div class="section-heading">
           <h2 id="experience-title">Experience</h2>
-          <p>Backend development, automation, and production support.</p>
         </div>
         <div class="experience-list">
           <article class="experience">
-            <div>
-              <h3>Mottu</h3>
-              <p class="experience-date">May 2026 to present</p>
+            <div class="experience-company">
+              <div class="company-mark company-mark-mottu">
+                <img src="assets/images/companies/mottu.svg" alt="" width="32" height="32" loading="lazy" decoding="async">
+              </div>
+              <div><h3>Mottu</h3><p>Fleet operations</p></div>
             </div>
-            <div>
-              <h4>Technology Trainee · Regulatory team</h4>
-              <p>I work directly with the Mexico operations team on registration, payments, and document reissue. My work spans REST APIs, RPA workflows, and internal monitoring screens, along with automated tests, CI/CD, and production troubleshooting.</p>
-              <p>I built Datadog dashboards, alerts, and a service-level objective using Terraform, and added metrics for regulatory backlogs, payment failures, and integration health in Brazil and Mexico.</p>
-            </div>
-          </article>
-          <article class="experience">
-            <div>
-              <h3>Coamo</h3>
-              <p class="experience-date">June to November 2025</p>
-            </div>
-            <div>
-              <h4>Data Science Intern</h4>
-              <p>Built the PDF invoice extraction API in Python and FastAPI, worked directly with end users on requirements and validation, and participated in deployment on Azure.</p>
+            <div class="experience-roles">
+              <div class="experience-role">
+                <p class="experience-date"><time datetime="2026-05">May 2026</time> to present</p>
+                <h4>Technology Trainee · Regulatory team</h4>
+                <p>I build .NET APIs and automations with the Mexico operations team. I redesigned how document reissue requests reach the robots, cutting submissions per request by about 60%. I also set up Datadog dashboards and alerts with Terraform so the team could track backlogs, payment failures, and integration health.</p>
+                <div class="experience-links">
+                  <a href="projects/mottu-regulatory.html">Fleet workflows <span aria-hidden="true">↗</span></a>
+                  <a href="projects/vpn-broker.html">VPN Broker <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
             </div>
           </article>
           <article class="experience">
-            <div>
-              <h3>Coamo</h3>
-              <p class="experience-date">November 2023 to June 2025</p>
+            <div class="experience-company">
+              <div class="company-mark company-mark-coamo">
+                <img src="assets/images/companies/coamo.webp" alt="" width="36" height="36" loading="lazy" decoding="async">
+              </div>
+              <div><h3>Coamo</h3><p>Agricultural cooperative</p></div>
             </div>
-            <div>
-              <h4>Systems Development Intern</h4>
-              <p>Contributed to interconnected systems for financial product sales and operations. Worked with SQL, Oracle, and Uniface on business rules, system integrations, and user requirements.</p>
+            <div class="experience-roles">
+              <div class="experience-role">
+                <p class="experience-date"><time datetime="2025-06">June</time> to <time datetime="2025-11">November 2025</time></p>
+                <h4>Data Science Intern</h4>
+                <p>I built a Python and FastAPI service that extracted structured data from 68 PDF invoices collected from all of Coamo’s branches. I validated the output with end users and helped deploy the service on Azure.</p>
+                <div class="experience-links"><a href="projects/invoice-extraction.html">Invoice extraction API <span aria-hidden="true">↗</span></a></div>
+              </div>
+              <div class="experience-role">
+                <p class="experience-date"><time datetime="2023-11">November 2023</time> to <time datetime="2025-06">June 2025</time></p>
+                <h4>Systems Development Intern</h4>
+                <p>I gathered requirements from users and used Oracle, SQL, and Uniface to implement business rules and integrations for financial product sales and operations.</p>
+              </div>
             </div>
           </article>
         </div>
