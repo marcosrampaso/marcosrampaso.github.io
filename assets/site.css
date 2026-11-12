@@ -542,6 +542,18 @@ li + li {
   color: #b0ecad;
 }
 
+.cover-trend-lab {
+  background: #0c1a22;
+}
+
+.cover-trend-lab img {
+  object-position: center 40%;
+}
+
+.cover-trend-lab .cover-stat strong {
+  color: #99e8dc;
+}
+
 .case-cover {
   margin: 26px 0 32px;
   overflow: hidden;

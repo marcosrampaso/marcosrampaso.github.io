@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trend Lab trading bot | Marcos Bezner</title>
+  <meta name="description" content="A trading bot and historical simulator for testing crypto futures strategies with market replay, modeled execution costs, and risk limits.">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trend Lab trading bot | Marcos Bezner">
+  <meta property="og:description" content="How I built a simulator to replay crypto futures data and compare strategies across 24 historical backtest scenarios.">
+  <meta property="og:url" content="https://marcosrampaso.github.io/projects/trend-lab.html">
+  <meta property="og:image" content="https://marcosrampaso.github.io/assets/images/covers/trend-lab.webp">
+  <meta property="og:image:alt" content="Illustrated Trend Lab workstation showing a candlestick replay and backtest dataset metrics">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://marcosrampaso.github.io/projects/trend-lab.html">
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">Marcos Bezner<span>.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html#work">Projects</a>
+        <a class="nav-about" href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" hidden><span aria-hidden="true"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-main">
+    <a class="back-link" href="../index.html#trend-lab">← Back to projects</a>
+    <p class="eyebrow">Personal project · Trading automation</p>
+    <h1>Trend Lab</h1>
+    <p class="case-lead">I built a trading bot and backtesting dashboard to replay historical crypto futures data and see how signals, execution costs, and risk limits affected simulated trades.</p>
+
+    <figure class="project-cover cover-trend-lab case-cover">
+      <img src="../assets/images/covers/trend-lab.webp" alt="Illustrated Trend Lab workstation with a candlestick chart and a historical replay playhead." width="1200" height="800" decoding="async">
+      <figcaption class="cover-metrics">
+        <div class="cover-stat"><strong>16,056</strong><span>Hourly candles in the dataset</span></div>
+        <div class="cover-stat"><strong>24</strong><span>Historical backtest scenarios</span></div>
+      </figcaption>
+    </figure>
+
+    <dl class="case-facts">
+      <div><dt>Role</dt><dd>Designed and built the simulator, dashboard, and research tools</dd></div>
+      <div><dt>Stack</dt><dd>JavaScript, Node.js, Lightweight Charts</dd></div>
+      <div><dt>Market data</dt><dd>ETH/USDT perpetual futures · December 2024 to September 2026</dd></div>
+    </dl>
+
+    <section class="case-section">
+      <h2>From market data to simulated trades</h2>
+      <p>I used public historical candles, mark prices, and funding records. The replay only feeds the strategy candles that have already closed at the selected time. A moving average crossover generates a signal, and the simulator models entry at the next candle’s open.</p>
+      <div class="architecture" role="group" aria-label="Trading simulator workflow">
+        <div class="workflow-node"><strong>Replay</strong>Advance through historical candles in timestamp order.</div>
+        <div class="workflow-node"><strong>Generate a signal</strong>Check for a crossover between the two moving averages.</div>
+        <div class="workflow-node"><strong>Simulate execution</strong>Apply position sizing, stops, trading fees, slippage, and funding.</div>
+        <div class="workflow-node"><strong>Review</strong>Inspect signals, fills, rejected entries, and results in the dashboard.</div>
+      </div>
+      <p>I wrote automated checks for look-ahead bias, execution order, minimum trade sizes, and how costs reconcile with the simulated account balance.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>What the backtests showed</h2>
+      <p>The published study combined four evaluation periods, three levels of risk per trade, and two cost models. In the January to September 2026 window, one configuration that risked 1% per trade ended 4.08% below its starting balance after modeled costs.</p>
+      <p>I kept that result alongside the other scenarios in the research archive. The simulator used historical data and simulated orders throughout the study.</p>
+    </section>
+
+    <div class="actions">
+      <a class="button primary" href="https://github.com/marcosrampaso/trend-lab-relatorios">View code and research reports <span aria-hidden="true">↗</span></a>
+      <a class="button" href="../index.html#work">More projects</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Marcos Bezner · São Paulo, Brazil</p>
+      <nav class="footer-links" aria-label="Social links">
+        <a href="mailto:marcosbezner@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/marcos-bezner/">LinkedIn</a>
+        <a href="https://github.com/marcosrampaso">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
