@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Learning Coursework | Marcos Bezner</title>
+  <meta name="description" content="Machine learning projects from UTFPR on Dota 2 match prediction, video game ratings, handwritten digit recognition, and iris classification.">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Machine Learning Coursework | Marcos Bezner">
+  <meta property="og:description" content="An academic portfolio of Python classification projects with model comparison and evaluation.">
+  <meta property="og:url" content="https://marcosrampaso.github.io/projects/machine-learning-coursework.html">
+  <link rel="canonical" href="https://marcosrampaso.github.io/projects/machine-learning-coursework.html">
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+  <script src="../assets/theme.js"></script>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">Marcos Bezner<span>.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="../index.html#work">Projects</a>
+        <a class="nav-about" href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" hidden><span aria-hidden="true"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case-main">
+    <a class="back-link" href="../index.html#machine-learning-coursework">← Back to research and education</a>
+    <h1>Machine Learning Coursework</h1>
+    <p class="case-lead">During my Computer Science degree at UTFPR, I tested how data preparation and model choice changed classification results across Dota 2 matches, game ratings, and handwritten digits.</p>
+
+    <dl class="case-facts">
+      <div><dt>University</dt><dd>Federal University of Technology – Paraná (UTFPR)</dd></div>
+      <div><dt>Course result</dt><dd>Highest possible grade in Machine Learning</dd></div>
+      <div><dt>Tools</dt><dd>Python, pandas, scikit-learn, Jupyter notebooks</dd></div>
+    </dl>
+
+    <section class="case-section" aria-labelledby="dota2-title">
+      <h2 id="dota2-title">Predicting Dota 2 match winners</h2>
+      <p>I used a 9,264-match course subset of the UCI Dota 2 dataset to study whether hero lineups and match settings could predict the winning team. I set up cross-validation for k-nearest neighbors, support vector machines, and random forests on the original features and on principal component analysis (PCA) projections with 2, 8, 16, 32, or 64 components.</p>
+      <p>I compared classification accuracy and runtime as the number of components increased. Rerunning the coursework requires the prepared course CSV and its evaluation helper.</p>
+      <p><a href="https://github.com/marcosrampaso/Machine-Learning/blob/main/colab/projetos/dota2-classificacao.ipynb">View the Dota 2 notebook <span aria-hidden="true">↗</span></a> · <a href="https://archive.ics.uci.edu/dataset/367/dota2+games+results">Original UCI dataset</a></p>
+    </section>
+
+    <section class="case-section" aria-labelledby="esrb-title">
+      <h2 id="esrb-title">Video game age ratings</h2>
+      <p>I used content descriptors from 1,895 games to predict four ESRB rating categories. I compared decision trees, random forests, support vector machines, and k-nearest neighbors using stratified cross-validation and reviewed class-level errors.</p>
+      <p>The random forest reached a mean macro F1 of <strong>0.87</strong> across ten folds. In the notebook’s 379-game holdout experiment, Everyone 10+ had the lowest F1 for both the random forest and the decision tree.</p>
+      <p><a href="https://github.com/marcosrampaso/Machine-Learning/blob/main/colab/projetos/classificacao-indicativa-esrb.ipynb">View the ESRB notebook <span aria-hidden="true">↗</span></a></p>
+    </section>
+
+    <section class="case-section" aria-labelledby="digits-title">
+      <h2 id="digits-title">Handwritten digit recognition</h2>
+      <p>I visualized 1,500 digit images with principal component analysis and tuned KNN and SVM classifiers using separate validation data within each training fold. On ten stratified folds, mean accuracy was <strong>88% for SVM</strong> and <strong>84% for KNN</strong>.</p>
+      <p><a href="https://github.com/marcosrampaso/Machine-Learning/blob/main/colab/projetos/reconhecimento-de-digitos.ipynb">View the digit recognition notebook <span aria-hidden="true">↗</span></a></p>
+    </section>
+
+    <section class="case-section" aria-labelledby="iris-title">
+      <h2 id="iris-title">An interpretable classifier for iris species</h2>
+      <p>I used exploratory plots to choose petal width and implemented a threshold classifier for two iris species. Over 20 stratified train/test splits, fitting the threshold on each training set yielded mean test accuracy of <strong>94.7%</strong>.</p>
+      <p><a href="https://github.com/marcosrampaso/Machine-Learning/blob/main/Week%201/atividade1.ipynb">View the iris notebook <span aria-hidden="true">↗</span></a></p>
+    </section>
+
+    <p>The full collection also covers water potability and mushroom classification.</p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/marcosrampaso/Machine-Learning">View the notebooks on GitHub <span aria-hidden="true">↗</span></a>
+      <a class="button" href="../index.html#work">More projects</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Marcos Bezner · São Paulo, Brazil</p>
+      <nav class="footer-links" aria-label="Social links">
+        <a href="mailto:marcosbezner@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/marcos-bezner/">LinkedIn</a>
+        <a href="https://github.com/marcosrampaso">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
