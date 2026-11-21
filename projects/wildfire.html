@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Wildfire Prediction | Marcos Bezner</title>
+  <title>Wildfire Prediction Thesis | Marcos Bezner</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" />
-  <meta name="description" content="A wildfire classification study combining geospatial and climate data with SVM modeling.">
+  <meta name="description" content="My Computer Science undergraduate thesis at UTFPR combines climate, geospatial, and socioeconomic data with SVM modeling to predict wildfire occurrence.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="theme-color" content="#f7f6f1">
@@ -20,6 +20,7 @@
 </div></header>
   <main id="main" class="layout">
     <div class="container"><a href="../index.html" class="back-link">← Back to home</a>
+      <p class="eyebrow">UTFPR · Undergraduate thesis</p>
       <h1 id="top">Wildfire Prediction in Brazil's Central-West Region</h1>
     <figure class="project-cover cover-wildfire case-cover">
       <img src="../assets/images/covers/wildfire.webp" alt="Illustrated aerial view of a low wildfire front and smoke in the Brazilian Cerrado." width="1200" height="800" loading="lazy" decoding="async">
@@ -29,7 +30,7 @@
     </figure>
       <nav class="case-toc" aria-label="Project contents"><a href="#summary">Project Summary</a><a href="#eda">Exploratory Data Analysis (EDA)</a><a href="#selecting-region">Selecting the Region of Interest</a><a href="#climate">Climate Data Processing</a><a href="#central-west">Central-West Region Analysis</a><a href="#Defining-negative-samples">Defining Negative Samples (Feature Engineering)</a><a href="#modeling">SVM Modeling and Evaluation</a><a href="#conclusion">Conclusion</a></nav>
 <p><a href="https://github.com/marcosrampaso/spatial-wildfire-prediction">View source code</a></p>
-<p class="notice">Research project. The reported metrics describe the project evaluation, not a guarantee of performance on future dates or unseen regions. The classification report below contains 300 evaluation samples.</p>
+<p class="notice">The classification report covers 300 samples evaluated in my Computer Science thesis at UTFPR.</p>
       <section style="margin-bottom: 32px;">
         <h2 id="summary">Project Summary</h2>
 
@@ -49,7 +50,7 @@
             engineering, and SVM-based modeling.</li>
           <li><strong>Key Insight:</strong> Prolonged dry periods show a strong correlation with increased wildfire
             activity, while municipalities with higher Gross Value Added (GVA) exhibit elevated fire occurrences.</li>
-          <li><strong>Result:</strong> Predictive model achieving high performance (F1-score ≈ 0.99).</li>
+          <li><strong>Result:</strong> Across 300 evaluation samples, the SVM achieved an F1 score of 0.99 for the wildfire class and 0.98 for the no-wildfire class.</li>
         </ul>
 
         <p>
@@ -482,11 +483,9 @@
         </p>
 
         <p>
-          The evaluation results demonstrate strong predictive performance, with the model achieving an
-          F1-score of approximately 0.99. Performance was assessed using multiple evaluation tools, including
-          the confusion matrix, ROC curve, and a comparative F1-score table, which together highlight the
-          model’s ability to accurately distinguish between fire and non-fire events while maintaining a
-          balanced trade-off between precision and recall.
+          The model achieved an F1 score of 0.99 for the wildfire class and 0.98 for the no-wildfire class
+          in the 300-sample evaluation. The classification report, confusion matrix, and ROC curve show
+          how the model performed on those samples.
         </p>
 
         <div style="overflow-x: auto; margin-top: 24px;">
@@ -591,10 +590,9 @@
         <h2 id="conclusion">Conclusion</h2>
 
         <p>
-          This project successfully developed a machine learning–based approach to predict wildfire occurrences
-          in Brazil’s Central-West region by integrating climatic, spatial, and socioeconomic data. The SVM model
-          demonstrated strong predictive performance, achieving an F1-score of approximately 0.99, indicating its
-          effectiveness in distinguishing between fire and non-fire events.
+          My thesis developed a workflow to predict wildfire occurrence in Brazil’s Central-West region by integrating
+          climate, geospatial, and socioeconomic data. On the 300 evaluation samples, the SVM achieved F1 scores
+          of 0.99 for wildfire and 0.98 for no wildfire.
 
           Key insights from the analysis highlighted the significant influence of prolonged dry periods on wildfire
           activity, as well as the correlation between high agricultural economic activity and increased fire
