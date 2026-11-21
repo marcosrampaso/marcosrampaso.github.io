@@ -421,11 +421,11 @@ li + li {
   margin-bottom: 10px;
 }
 
-.project h3 {
+.project :is(h3, h4) {
   font-size: clamp(1.65rem, 3vw, 2.3rem);
 }
 
-.project-featured h3 {
+.project-featured :is(h3, h4) {
   font-size: clamp(2rem, 4vw, 3.35rem);
 }
 
@@ -1158,5 +1158,170 @@ iframecaption {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+
+/* Project topics and academic evidence */
+.topic-tabs:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.topic-tabs button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: .91rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.topic-tabs button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.topic-tabs button[aria-selected="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.topic-panel[role="tabpanel"] .topic-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.topic-panel[role="tabpanel"] {
+  scroll-margin-top: 76px;
+}
+
+.topic-panel:not([role="tabpanel"]) + .topic-panel {
+  margin-top: 28px;
+}
+
+.topic-panel:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.coursework-grade {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(22px, 5vw, 54px);
+  border-inline-start: 1px solid var(--line);
+  background-color: var(--accent-soft);
+  background-image: radial-gradient(color-mix(in srgb, var(--accent) 24%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.coursework-grade strong {
+  color: var(--accent);
+  font: 600 clamp(3.8rem, 8vw, 7rem)/1 var(--mono);
+  letter-spacing: -.09em;
+}
+
+.coursework-grade strong span {
+  font-size: .5em;
+  letter-spacing: -.06em;
+}
+
+.coursework-grade p {
+  margin: 11px 0 3px;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.coursework-grade a {
+  font-size: .9rem;
+  font-weight: 650;
+}
+
+.topic-text-card {
+  display: flex;
+}
+
+.topic-text-card .project-body > p:not(.project-label) {
+  max-width: 76ch;
+}
+
+.education-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+}
+
+.education-degree h3 {
+  margin-bottom: 6px;
+}
+
+.education-degree p {
+  margin-bottom: 14px;
+}
+
+.education-grades {
+  margin: 0;
+}
+
+.education-grades > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.education-grades dt {
+  color: var(--muted);
+}
+
+.education-grades dd {
+  margin: 0;
+  color: var(--accent);
+  font: 600 .94rem/1.4 var(--mono);
+  white-space: nowrap;
+}
+
+@media (min-width: 761px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .coursework-grade {
+    min-height: 0;
+    border-top: 1px solid var(--line);
+    border-inline-start: 0;
+  }
+
+  .education-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .topic-panel[role="tabpanel"] {
+    scroll-margin-top: 116px;
   }
 }

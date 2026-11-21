@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marcos Bezner | Backend Engineering &amp; Automation</title>
-  <meta name="description" content="Marcos Bezner builds C#/.NET and Python APIs, platform services, and automation. Explore the VPN Broker, regulatory workflows for Mottu Mexico, and more.">
+  <title>Marcos Bezner | Data Science &amp; Software Engineering</title>
+  <meta name="description" content="Marcos Bezner works with Python, SQL, applied machine learning, and production systems. Explore data projects, distributed systems, and automation.">
   <meta name="theme-color" content="#f7f6f1">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Marcos Bezner | Backend Engineering &amp; Automation">
-  <meta property="og:description" content="Case studies in backend engineering, fleet operations, document processing, personal finance, and trading research software.">
+  <meta property="og:title" content="Marcos Bezner | Data Science &amp; Software Engineering">
+  <meta property="og:description" content="Case studies in applied machine learning, document data extraction, distributed systems, and fleet operations.">
   <meta property="og:url" content="https://marcosrampaso.github.io/">
   <meta property="og:image" content="https://marcosrampaso.github.io/assets/images/portfolio-cover.jpg">
   <meta property="og:image:alt" content="Laptop displaying an illustrative backend development workspace">
@@ -16,6 +16,7 @@
   <link rel="canonical" href="https://marcosrampaso.github.io/">
   <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
   <script src="assets/theme.js"></script>
+  <script src="assets/work-topics.js" defer></script>
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -37,8 +38,8 @@
       <section class="hero" aria-labelledby="intro-title">
         <div class="hero-copy">
           <p class="eyebrow hero-location">São Paulo, Brazil</p>
-          <h1 id="intro-title">Backend systems<br class="hero-break"> for real <em>operations.</em></h1>
-          <p class="intro">I’m Marcos, a software developer working with C#/.NET and Python. At Mottu, I build APIs and automations for vehicle registration, payments, and document reissue in Mexico.</p>
+          <h1 id="intro-title">Data science and<br class="hero-break"> production <em>systems.</em></h1>
+          <p class="intro">I’m Marcos. At Coamo, I used Python and SQL to work with operational data. I built and evaluated machine learning models at UTFPR. At Mottu, I develop systems and define KPIs for operations.</p>
           <div class="actions">
             <a class="button primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
             <a class="button" href="https://github.com/marcosrampaso">GitHub <span aria-hidden="true">↗</span></a>
@@ -50,120 +51,198 @@
         </figure>
       </section>
 
-      <dl class="impact-band" aria-label="Production scale at Mottu">
+      <dl class="impact-band" aria-label="Highlights from projects and education">
         <div>
-          <dt>~66,500</dt>
-          <dd>VPN lease requests in 30 days</dd>
+          <dt>10/10</dt>
+          <dd>Machine Learning grade · UTFPR</dd>
         </div>
         <div>
-          <dt>~1,750</dt>
-          <dd>Motorcycles per month · Mexico, May to October 2026</dd>
+          <dt>68</dt>
+          <dd>PDF invoices processed · Coamo</dd>
         </div>
         <div>
-          <dt>~1,040</dt>
-          <dd>Payments per month · Mexico, May to October 2026</dd>
+          <dt>~60%</dt>
+          <dd>Fewer automation submissions per request · Mottu</dd>
         </div>
       </dl>
 
-      <section class="section work-section" id="work" aria-labelledby="work-title">
+      <section class="section work-section" id="work" aria-labelledby="work-title" data-project-topics>
         <div class="section-heading">
           <h2 id="work-title">Selected work</h2>
         </div>
-
-        <div class="project-grid">
-          <article class="project project-featured">
-            <div class="project-body">
-              <p class="project-label">Mottu · Platform engineering</p>
-              <h3>VPN Broker</h3>
-              <p>I designed and built a shared API that provisions VPN profiles and credentials on demand. After a pilot in Mexico, the service reached six production Kubernetes deployments configured for VPN access in Brazil, Mexico, and the United States.</p>
-              <ul class="tags" aria-label="Technologies">
-                <li>.NET 10</li><li>PostgreSQL</li><li>Kubernetes</li><li>OpenVPN</li>
-              </ul>
-              <a class="project-link" href="projects/vpn-broker.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-            <figure class="project-cover cover-vpn-broker">
-              <img src="assets/images/covers/vpn-broker.webp" alt="Illustration of a VPN Broker host distributing connections to three automation clients. Its monitor shows about 66,500 lease requests in 30 days and six production deployments." width="1360" height="680" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>~66,500</strong><span>Lease requests in 30 days</span></div>
-                <div class="cover-stat"><strong>6</strong><span>Production deployments</span></div>
-              </figcaption>
-            </figure>
-          </article>
-
-          <article class="project">
-            <figure class="project-cover cover-mottu-regulatory">
-              <img src="assets/images/covers/mottu-regulatory.webp" alt="Illustrated fleet operations center in Mexico with plates and registration cards. Its monitor shows monthly averages of about 1,750 motorcycles and 1,040 payments from May to October 2026." width="1360" height="766" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>635</strong><span>Reissue cases migrated</span></div>
-                <div class="cover-stat"><strong>60%</strong><span>Fewer robot submissions per request</span></div>
-              </figcaption>
-            </figure>
-            <div class="project-body">
-              <p class="project-label">Mottu Mexico · Regulatory operations</p>
-              <h3>Fleet registration &amp; document reissue</h3>
-              <p>I build and maintain .NET and RPA workflows for vehicle registration, payments, and document reissue. I migrated cases from Pipefy and redesigned how requests reach the automation.</p>
-              <ul class="tags" aria-label="Technologies">
-                <li>C#/.NET</li><li>REST APIs</li><li>RPA</li><li>Datadog</li>
-              </ul>
-              <a class="project-link" href="projects/mottu-regulatory.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article class="project">
-            <figure class="project-cover cover-meu-dinheiro">
-              <img src="assets/images/covers/meu-dinheiro.webp" alt="Illustration of a personal finance desk with documents and an example spending chart." width="1200" height="800" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>4</strong><span>File import formats · PDF, CSV, OFX, XLSX</span></div>
-              </figcaption>
-            </figure>
-            <div class="project-body">
-              <p class="project-label">Personal application</p>
-              <h3>Meu Dinheiro</h3>
-              <p>A local finance app that combines bank imports, transaction review, investments, and planning. I built it with a Python JSON API, SQLite, a web interface, and a macOS desktop preview.</p>
-              <ul class="tags" aria-label="Technologies">
-                <li>Python</li><li>SQLite</li><li>JSON API</li><li>Document imports</li>
-              </ul>
-              <a class="project-link" href="projects/meu-dinheiro.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article class="project project-wide">
-            <div class="project-body">
-              <p class="project-label">Coamo · Document processing</p>
-              <h3>Invoice extraction API</h3>
-              <p>I built a FastAPI application that extracted structured data from 68 PDF invoices collected from all of Coamo’s branches. I helped deploy it on Azure with Docker and Kubernetes.</p>
-              <ul class="tags" aria-label="Technologies">
-                <li>Python</li><li>FastAPI</li><li>SQL / PL/SQL</li><li>Azure</li>
-              </ul>
-              <a class="project-link" href="projects/invoice-extraction.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-            <figure class="project-cover cover-invoice-extraction">
-              <img src="assets/images/covers/invoice-extraction.webp" alt="Illustration of invoice documents alongside a structured data view." width="1200" height="800" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>68</strong><span>PDF invoices processed</span></div>
-              </figcaption>
-            </figure>
-          </article>
-
-          <article class="project project-wide" id="trend-lab">
-            <div class="project-body">
-              <p class="project-label">Personal project · Trading automation</p>
-              <h3>Trend Lab</h3>
-              <p>I built a trading bot and simulator to replay historical crypto futures data, evaluate signals, and compare how trading costs and risk limits affected each strategy.</p>
-              <ul class="tags" aria-label="Technologies and methods">
-                <li>JavaScript</li><li>Node.js</li><li>Market data replay</li><li>Backtesting</li>
-              </ul>
-              <a class="project-link" href="projects/trend-lab.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-            <figure class="project-cover cover-trend-lab">
-              <img src="assets/images/covers/trend-lab.webp" alt="Illustrated Trend Lab workstation with a candlestick chart and a historical replay playhead." width="1200" height="800" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>16,056</strong><span>Hourly candles in the dataset</span></div>
-                <div class="cover-stat"><strong>24</strong><span>Historical backtest scenarios</span></div>
-              </figcaption>
-            </figure>
-          </article>
+        <div class="topic-tabs" aria-label="Project topics" data-topic-tabs hidden>
+          <button type="button" id="tab-ai-data-science" aria-controls="ai-data-science">AI &amp; Data Science</button>
+          <button type="button" id="tab-distributed-systems" aria-controls="distributed-systems">Distributed Systems</button>
+          <button type="button" id="tab-automation-applications" aria-controls="automation-applications">Automation &amp; Applications</button>
         </div>
+
+        <section class="topic-panel" id="ai-data-science" aria-labelledby="heading-ai-data-science">
+          <h3 class="topic-heading" id="heading-ai-data-science">AI &amp; Data Science</h3>
+          <div class="project-grid">
+            <article class="project project-featured" id="machine-learning-coursework">
+              <div class="project-body">
+                <p class="project-label">UTFPR · Applied machine learning</p>
+                <h4>Machine learning coursework</h4>
+                <p>I compared classification models and preprocessing choices across Dota 2 match prediction, video game ratings, handwritten digits, and iris species.</p>
+                <ul class="tags" aria-label="Technologies and methods">
+                  <li>Python</li><li>scikit-learn</li><li>PCA</li><li>Cross-validation</li>
+                </ul>
+                <a class="project-link" href="projects/machine-learning-coursework.html">Explore the coursework <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="coursework-grade">
+                <strong>10<span>/10</span></strong>
+                <p>Machine Learning grade at UTFPR</p>
+                <a href="#education">See academic evidence <span aria-hidden="true">↓</span></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <figure class="project-cover cover-wildfire">
+                <img src="assets/images/covers/wildfire.webp" alt="Illustrated aerial view of a low wildfire front and smoke in the Brazilian Cerrado." width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>300</strong><span>Evaluation samples</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">UTFPR · Geospatial analysis</p>
+                <h4>Wildfire prediction with SVM</h4>
+                <p>I combined geospatial and climate data to study wildfire prediction in Brazil’s Central-West region.</p>
+                <ul class="tags" aria-label="Technologies and methods"><li>Python</li><li>SVM</li><li>Geospatial data</li></ul>
+                <a class="project-link" href="projects/wildfire.html">Explore the study <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <figure class="project-cover cover-olist-retention">
+                <img src="assets/images/covers/olist-retention.webp" alt="Illustrated e-commerce fulfillment workspace with parcels ready to ship." width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>100,000+</strong><span>Orders in the public dataset</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">Business analytics · Work in progress</p>
+                <h4>Olist customer retention analysis</h4>
+                <p>I explore purchase behavior and retention using public Brazilian e-commerce data.</p>
+                <ul class="tags" aria-label="Technologies and methods"><li>pandas</li><li>Exploratory analysis</li><li>Retention</li></ul>
+                <a class="project-link" href="projects/brazilian_ecommerce.html">See the current scope <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <figure class="project-cover cover-invoice-extraction">
+                <img src="assets/images/covers/invoice-extraction.webp" alt="Illustration of invoice documents alongside a structured data view." width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>68</strong><span>PDF invoices processed</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">Coamo · Document processing</p>
+                <h4>Invoice extraction API</h4>
+                <p>I built a FastAPI application that extracted structured data from 68 PDF invoices collected from all of Coamo’s branches. I helped deploy it on Azure with Docker and Kubernetes.</p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Python</li><li>FastAPI</li><li>SQL / PL/SQL</li><li>Azure</li>
+                </ul>
+                <a class="project-link" href="projects/invoice-extraction.html">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project" id="trend-lab">
+              <figure class="project-cover cover-trend-lab">
+                <img src="assets/images/covers/trend-lab.webp" alt="Illustrated Trend Lab workstation with a candlestick chart and a historical replay playhead." width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>16,056</strong><span>Hourly candles in the dataset</span></div>
+                  <div class="cover-stat"><strong>24</strong><span>Historical backtest scenarios</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">Quantitative research · Simulation</p>
+                <h4>Trend Lab</h4>
+                <p>I built a simulator to replay historical crypto futures data and evaluate trading hypotheses. The research compares strategies under realistic costs and risk limits.</p>
+                <ul class="tags" aria-label="Technologies and methods">
+                  <li>JavaScript</li><li>Node.js</li><li>Market data replay</li><li>Backtesting</li>
+                </ul>
+                <a class="project-link" href="projects/trend-lab.html">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="topic-panel" id="distributed-systems" aria-labelledby="heading-distributed-systems">
+          <h3 class="topic-heading" id="heading-distributed-systems">Distributed Systems</h3>
+          <div class="project-grid">
+            <article class="project project-featured">
+              <div class="project-body">
+                <p class="project-label">Mottu · Platform engineering</p>
+                <h4>VPN Broker</h4>
+                <p>I designed and built a shared API that provisions VPN profiles and credentials on demand. After a pilot in Mexico, the service reached six production Kubernetes deployments configured for VPN access in Brazil, Mexico, and the United States.</p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>.NET 10</li><li>PostgreSQL</li><li>Kubernetes</li><li>OpenVPN</li>
+                </ul>
+                <a class="project-link" href="projects/vpn-broker.html">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+              <figure class="project-cover cover-vpn-broker">
+                <img src="assets/images/covers/vpn-broker.webp" alt="Illustration of a VPN Broker host distributing connections to three automation clients. Its monitor shows about 66,500 lease requests in 30 days and six production deployments." width="1360" height="680" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>~66,500</strong><span>Lease requests in 30 days</span></div>
+                  <div class="cover-stat"><strong>6</strong><span>Production deployments</span></div>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="project project-wide topic-text-card">
+
+              <div class="project-body">
+                <p class="project-label">UTFPR · Distributed systems coursework</p>
+                <h4>Distributed game rooms</h4>
+                <p>A coursework project for hosting Battleship games. A coordinator tracks available rooms and directs players to them. Room servers host the matches, and the design uses sockets, threads, and a semaphore to coordinate shared room state.</p>
+                <ul class="tags" aria-label="Technologies and methods"><li>Sockets</li><li>Concurrency</li><li>Client–server</li></ul>
+                <a class="project-link" href="https://github.com/marcosrampaso/Sistemas-Distribuidos/tree/main/Servidor_Hospedagem_Jogos">View the architecture and code <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="topic-panel" id="automation-applications" aria-labelledby="heading-automation-applications">
+          <h3 class="topic-heading" id="heading-automation-applications">Automation &amp; Applications</h3>
+          <div class="project-grid">
+            <article class="project">
+              <figure class="project-cover cover-mottu-regulatory">
+                <img src="assets/images/covers/mottu-regulatory.webp" alt="Illustrated fleet operations center in Mexico with plates and registration cards. Its monitor shows monthly averages of about 1,750 motorcycles and 1,040 payments from May to October 2026." width="1360" height="766" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>635</strong><span>Reissue cases migrated</span></div>
+                  <div class="cover-stat"><strong>60%</strong><span>Fewer robot submissions per request</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">Mottu Mexico · Regulatory operations</p>
+                <h4>Fleet registration &amp; document reissue</h4>
+                <p>I build and maintain .NET and RPA workflows for vehicle registration, payments, and document reissue. I migrated cases from Pipefy and redesigned how requests reach the automation.</p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>C#/.NET</li><li>REST APIs</li><li>RPA</li><li>Datadog</li>
+                </ul>
+                <a class="project-link" href="projects/mottu-regulatory.html">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project">
+              <figure class="project-cover cover-meu-dinheiro">
+                <img src="assets/images/covers/meu-dinheiro.webp" alt="Illustration of a personal finance desk with documents and an example spending chart." width="1200" height="800" loading="lazy" decoding="async">
+                <figcaption class="cover-metrics">
+                  <div class="cover-stat"><strong>4</strong><span>File import formats · PDF, CSV, OFX, XLSX</span></div>
+                </figcaption>
+              </figure>
+              <div class="project-body">
+                <p class="project-label">Personal application</p>
+                <h4>Meu Dinheiro</h4>
+                <p>A local finance app that combines bank imports, transaction review, investments, and planning. I built it with a Python JSON API, SQLite, a web interface, and a macOS desktop preview.</p>
+                <ul class="tags" aria-label="Technologies">
+                  <li>Python</li><li>SQLite</li><li>JSON API</li><li>Document imports</li>
+                </ul>
+                <a class="project-link" href="projects/meu-dinheiro.html">Read the case study <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
       </section>
 
       <section class="section" id="experience" aria-labelledby="experience-title">
@@ -181,8 +260,9 @@
             <div class="experience-roles">
               <div class="experience-role">
                 <p class="experience-date"><time datetime="2026-05">May 2026</time> to present</p>
-                <h4>Technology Trainee · Regulatory team</h4>
-                <p>I build .NET APIs and automations with the Mexico operations team. I redesigned how document reissue requests reach the robots, cutting submissions per request by about 60%. I also set up Datadog dashboards and alerts with Terraform so the team could track backlogs, payment failures, and integration health.</p>
+                <h4>Technology Trainee</h4>
+                <p>I built .NET APIs and automations with the Mexico regulatory operations team. I redesigned how document reissue requests reach the robots, cutting submissions per request by about 60%. I also set up Datadog dashboards and alerts with Terraform so the team could track backlogs, payment failures, and integration health.</p>
+                <p>I currently act as technical product manager for a new inventory system. I work with a two-person team, lead the architecture work, and define KPIs from operational data.</p>
                 <div class="experience-links">
                   <a href="projects/mottu-regulatory.html">Fleet workflows <span aria-hidden="true">↗</span></a>
                   <a href="projects/vpn-broker.html">VPN Broker <span aria-hidden="true">↗</span></a>
@@ -215,48 +295,33 @@
 
         <div class="skills-grid" id="services" aria-label="Technical skills">
           <div><h3>Backend &amp; integration</h3><p>C#, ASP.NET Core, Python, FastAPI, Django, REST APIs, and RPA.</p></div>
-          <div><h3>Data &amp; infrastructure</h3><p>PostgreSQL, EF Core, SQLite, Oracle, Docker, Kubernetes, Azure, and Terraform.</p></div>
+          <div><h3>Data &amp; machine learning</h3><p>Python, SQL, pandas, scikit-learn, PostgreSQL, and Oracle.</p></div>
+          <div><h3>Cloud &amp; infrastructure</h3><p>EF Core, SQLite, Docker, Kubernetes, Azure, and Terraform.</p></div>
           <div><h3>Quality &amp; observability</h3><p>Automated tests, CI/CD, Datadog, Grafana, and Loki.</p></div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="research-title">
+      <section class="section" id="education" aria-labelledby="education-title">
         <div class="section-heading">
-          <h2 id="research-title">Research &amp; education</h2>
-          <p>Bachelor’s degree in Computer Science from the Federal University of Technology – Paraná (UTFPR).</p>
+          <h2 id="education-title">Education</h2>
         </div>
-        <div class="research-grid">
-          <article class="research-item">
-            <figure class="project-cover cover-wildfire">
-              <img src="assets/images/covers/wildfire.webp" alt="Illustrated aerial view of a low wildfire front and smoke in the Brazilian Cerrado." width="1200" height="800" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>300</strong><span>Evaluation samples</span></div>
-              </figcaption>
-            </figure>
-            <div><h3>Wildfire prediction with SVM</h3><p>Geospatial and climate data analysis for wildfire prediction in Brazil’s Central-West region.</p><a href="projects/wildfire.html">Explore the study <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="research-item">
-            <figure class="project-cover cover-olist-retention">
-              <img src="assets/images/covers/olist-retention.webp" alt="Illustrated e-commerce fulfillment workspace with parcels ready to ship." width="1200" height="800" loading="lazy" decoding="async">
-              <figcaption class="cover-metrics">
-                <div class="cover-stat"><strong>100,000+</strong><span>Orders in the public dataset</span></div>
-              </figcaption>
-            </figure>
-            <div><h3>Olist customer retention analysis</h3><p>Exploratory work in progress on purchase behavior and retention using public e-commerce data.</p><a href="projects/brazilian_ecommerce.html">See the current scope <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="research-item" id="machine-learning-coursework">
-            <div>
-              <h3>Machine learning coursework</h3>
-              <p>Predicting Dota 2 match outcomes with dimensionality reduction, alongside other classification projects from the UTFPR course where I earned the highest possible grade.</p>
-              <a href="projects/machine-learning-coursework.html">Explore the coursework <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
+        <div class="education-panel">
+          <div class="education-degree">
+            <h3>Bachelor’s degree in Computer Science</h3>
+            <p>Federal University of Technology – Paraná (UTFPR)</p>
+            <a class="project-link" href="assets/documents/utfpr-course-completion-public.pdf">View course completion certificate (redacted PDF) <span aria-hidden="true">↗</span></a>
+          </div>
+          <dl class="education-grades" aria-label="Selected coursework grades">
+            <div><dt>Machine Learning</dt><dd>10/10</dd></div>
+            <div><dt>Pattern Recognition</dt><dd>9/10</dd></div>
+            <div><dt>Image Processing</dt><dd>8.8/10</dd></div>
+          </dl>
         </div>
       </section>
 
       <section class="section contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-box">
-          <div><h2 id="contact-title">Let’s talk.</h2><p>Get in touch about backend engineering, platform work, or workflow automation.</p></div>
+          <div><h2 id="contact-title">Let’s talk.</h2><p>Get in touch about data projects, systems engineering, or workflow automation.</p></div>
           <a class="button primary" href="mailto:marcosbezner@gmail.com">Email me <span aria-hidden="true">↗</span></a>
         </div>
       </section>
